@@ -22,7 +22,7 @@
 #ifndef CAPTURE_FILE_H
 #define CAPTURE_FILE_H
 
-#include <QObject>
+#include <QtCore/QObject>
 
 #include <config.h>
 

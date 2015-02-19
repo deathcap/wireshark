@@ -33,9 +33,9 @@
 
 #ifdef HAVE_LIBPCAP
 
-#include <QTimer>
-#include <QFileDialog>
-#include <QMessageBox>
+#include <QtCore/QTimer>
+#include <QtWidgets/QFileDialog>
+#include <QtWidgets/QMessageBox>
 
 #include "ringbuffer.h"
 #include "ui/capture_ui_utils.h"
@@ -897,7 +897,7 @@ bool InterfaceTreeWidgetItem::operator< (const QTreeWidgetItem &other) const {
 // InterfaceTreeDelegate
 //
 
-#include <QComboBox>
+#include <QtWidgets/QComboBox>
 
 InterfaceTreeDelegate::InterfaceTreeDelegate(QObject *parent)
     : QStyledItemDelegate(parent)

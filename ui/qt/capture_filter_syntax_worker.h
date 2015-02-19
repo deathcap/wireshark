@@ -22,9 +22,9 @@
 #ifndef CAPTURE_FILTER_SYNTAX_WORKER_H
 #define CAPTURE_FILTER_SYNTAX_WORKER_H
 
-#include <QMutex>
-#include <QObject>
-#include <QWaitCondition>
+#include <QtCore/QMutex>
+#include <QtCore/QObject>
+#include <QtCore/QWaitCondition>
 
 class CaptureFilterSyntaxWorker : public QObject
 {

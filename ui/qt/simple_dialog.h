@@ -30,7 +30,7 @@
 
 #include "ui/simple_dialog.h"
 
-#include <QMessageBox>
+#include <QtWidgets/QMessageBox>
 
 typedef QPair<QString,QString> MessagePair;
 

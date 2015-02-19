@@ -32,14 +32,14 @@
 #include "qt_ui_utils.h"
 #include "wireshark_application.h"
 
-#include <QAction>
-#include <QClipboard>
-#include <QFileDialog>
-#include <QKeyEvent>
-#include <QPushButton>
-#include <QTextStream>
-#include <QTreeWidgetItem>
-#include <QTreeWidgetItemIterator>
+#include <QtWidgets/QAction>
+#include <QtGui/QClipboard>
+#include <QtWidgets/QFileDialog>
+#include <QtGui/QKeyEvent>
+#include <QtWidgets/QPushButton>
+#include <QtCore/QTextStream>
+#include <QtWidgets/QTreeWidgetItem>
+#include <QtWidgets/QTreeWidgetItemIterator>
 
 #include "tango_colors.h"
 

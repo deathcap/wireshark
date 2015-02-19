@@ -31,16 +31,16 @@
 #include "qt_ui_utils.h"
 #include "wireshark_application.h"
 
-#include <QClipboard>
-#include <QMessageBox>
-#include <QTreeWidget>
-#include <QTreeWidgetItemIterator>
+#include <QtGui/QClipboard>
+#include <QtWidgets/QMessageBox>
+#include <QtWidgets/QTreeWidget>
+#include <QtWidgets/QTreeWidgetItemIterator>
 #include <epan/packet_info.h>
 #include <epan/to_str.h>
 #include <epan/tap.h>
 #include <epan/dissectors/packet-lbm.h>
 
-#include <QDebug>
+#include <QtCore/QDebug>
 
 namespace
 {

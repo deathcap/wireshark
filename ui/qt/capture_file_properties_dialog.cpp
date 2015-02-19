@@ -32,9 +32,9 @@
 #include "qt_ui_utils.h"
 #include "wireshark_application.h"
 
-#include <QDateTime>
-#include <QPushButton>
-#include <QTextStream>
+#include <QtCore/QDateTime>
+#include <QtWidgets/QPushButton>
+#include <QtCore/QTextStream>
 
 // To do:
 // - Add file hashes

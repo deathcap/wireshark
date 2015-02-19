@@ -32,9 +32,9 @@
 
 #include "syntax_line_edit.h"
 
-#include <QDialog>
-#include <QPushButton>
-#include <QRadioButton>
+#include <QtWidgets/QDialog>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QRadioButton>
 
 namespace Ui {
 class ImportTextDialog;

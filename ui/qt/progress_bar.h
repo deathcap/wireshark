@@ -26,11 +26,11 @@
 
 #include "ui/progress_dlg.h"
 
-#include <QProgressBar>
+#include <QtWidgets/QProgressBar>
 
 #if defined(Q_OS_WIN) && QT_VERSION >= QT_VERSION_CHECK(5, 2, 0)
-#include <QWinTaskbarButton>
-#include <QWinTaskbarProgress>
+#include <WinTaskbarButton/QWinTaskbarButton>
+#include <WinTaskbarProgress/QWinTaskbarProgress>
 #endif
 
 class ProgressBar;

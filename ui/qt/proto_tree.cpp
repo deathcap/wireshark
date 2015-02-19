@@ -26,12 +26,12 @@
 #include <epan/ftypes/ftypes.h>
 #include <epan/prefs.h>
 
-#include <QApplication>
-#include <QContextMenuEvent>
-#include <QDesktopServices>
-#include <QHeaderView>
-#include <QTreeWidgetItemIterator>
-#include <QUrl>
+#include <QtWidgets/QApplication>
+#include <QtGui/QContextMenuEvent>
+#include <QtGui/QDesktopServices>
+#include <QtWidgets/QHeaderView>
+#include <QtWidgets/QTreeWidgetItemIterator>
+#include <QtCore/QUrl>
 
 QColor        expert_color_comment    ( 0xb7, 0xf7, 0x74 );        /* Green */
 QColor        expert_color_chat       ( 0x80, 0xb7, 0xf7 );        /* light blue */

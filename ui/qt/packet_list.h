@@ -28,8 +28,8 @@
 #include "proto_tree.h"
 #include "related_packet_delegate.h"
 
-#include <QTreeView>
-#include <QMenu>
+#include <QtWidgets/QTreeView>
+#include <QtWidgets/QMenu>
 
 class QAction;
 

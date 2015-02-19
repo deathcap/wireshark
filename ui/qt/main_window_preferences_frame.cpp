@@ -29,8 +29,8 @@
 #include <epan/prefs-int.h>
 #include <wsutil/filesystem.h>
 
-#include <QFileDialog>
-#include <QDebug>
+#include <QtWidgets/QFileDialog>
+#include <QtCore/QDebug>
 
 MainWindowPreferencesFrame::MainWindowPreferencesFrame(QWidget *parent) :
     QFrame(parent),

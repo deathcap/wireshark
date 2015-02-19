@@ -34,8 +34,8 @@
 #include "stock_icon.h"
 #include "wireshark_application.h"
 
-#include <QContextMenuEvent>
-#include <QPushButton>
+#include <QtGui/QContextMenuEvent>
+#include <QtWidgets/QPushButton>
 
 // To do:
 // - More context menu items

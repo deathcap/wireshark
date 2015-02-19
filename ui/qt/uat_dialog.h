@@ -28,7 +28,7 @@
 
 #include "syntax_line_edit.h"
 
-#include <QDialog>
+#include <QtWidgets/QDialog>
 
 class QComboBox;
 class QPushButton;

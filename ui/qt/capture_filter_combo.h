@@ -24,8 +24,8 @@
 
 #include "capture_filter_edit.h"
 
-#include <QComboBox>
-#include <QList>
+#include <QtWidgets/QComboBox>
+#include <QtCore/QList>
 
 class CaptureFilterCombo : public QComboBox
 {

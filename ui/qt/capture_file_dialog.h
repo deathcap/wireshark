@@ -33,13 +33,13 @@
 
 #include "ui/file_dialog.h"
 
-#include <QFileDialog>
-#include <QVBoxLayout>
-#include <QLabel>
-#include <QRadioButton>
-#include <QCheckBox>
-#include <QDialogButtonBox>
-#include <QComboBox>
+#include <QtWidgets/QFileDialog>
+#include <QtWidgets/QVBoxLayout>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QRadioButton>
+#include <QtWidgets/QCheckBox>
+#include <QtWidgets/QDialogButtonBox>
+#include <QtWidgets/QComboBox>
 
 class CaptureFileDialog : public QFileDialog
 {

@@ -22,7 +22,7 @@
 #ifndef RECENT_FILE_STATUS_H
 #define RECENT_FILE_STATUS_H
 
-#include <QObject>
+#include <QtCore/QObject>
 
 class RecentFileStatus : public QObject
 {

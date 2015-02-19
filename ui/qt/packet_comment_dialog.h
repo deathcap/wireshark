@@ -22,7 +22,7 @@
 #ifndef PACKET_COMMENT_DIALOG_H
 #define PACKET_COMMENT_DIALOG_H
 
-#include <QDialog>
+#include <QtWidgets/QDialog>
 
 namespace Ui {
 class PacketCommentDialog;

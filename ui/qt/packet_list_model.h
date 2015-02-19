@@ -30,9 +30,9 @@
 
 #include <epan/packet.h>
 
-#include <QAbstractItemModel>
-#include <QFont>
-#include <QVector>
+#include <QtCore/QAbstractItemModel>
+#include <QtGui/QFont>
+#include <QtCore/QVector>
 
 #include "packet_list_record.h"
 

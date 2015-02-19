@@ -30,7 +30,7 @@
 
 #include "cfile.h"
 
-#include <QTabWidget>
+#include <QtWidgets/QTabWidget>
 
 class QTreeWidget;
 class QTreeWidgetItem;

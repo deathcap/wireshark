@@ -38,9 +38,9 @@
 
 #include "wireshark_dialog.h"
 
-#include <QFile>
-#include <QMap>
-#include <QPushButton>
+#include <QtCore/QFile>
+#include <QtCore/QMap>
+#include <QtWidgets/QPushButton>
 
 extern "C" {
 WS_DLL_PUBLIC FILE *data_out_file;

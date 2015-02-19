@@ -27,11 +27,11 @@
 
 #include "qt_ui_utils.h"
 
-#include <QFont>
-#include <QFontMetrics>
-#include <QPalette>
-#include <QPen>
-#include <QPointF>
+#include <QtGui/QFont>
+#include <QtGui/QFontMetrics>
+#include <QtGui/QPalette>
+#include <QtGui/QPen>
+#include <QtCore/QPointF>
 
 const int max_comment_em_width_ = 20;
 

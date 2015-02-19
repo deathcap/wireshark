@@ -43,7 +43,7 @@
 
 #include "wireshark_dialog.h"
 
-#include <QClipboard>
+#include <QtGui/QClipboard>
 
 namespace Ui {
 class CaptureFilePropertiesDialog;

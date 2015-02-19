@@ -21,8 +21,8 @@
 
 #include "follow_stream_text.h"
 
-#include <QMouseEvent>
-#include <QTextCursor>
+#include <QtGui/QMouseEvent>
+#include <QtGui/QTextCursor>
 
 FollowStreamText::FollowStreamText(QWidget *parent) :
     QTextEdit(parent)

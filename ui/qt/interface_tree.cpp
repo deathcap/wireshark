@@ -34,9 +34,9 @@
 #include "sparkline_delegate.h"
 #include "wireshark_application.h"
 
-#include <QLabel>
-#include <QHeaderView>
-#include <QTimer>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QHeaderView>
+#include <QtCore/QTimer>
 
 const int stat_update_interval_ = 1000; // ms
 

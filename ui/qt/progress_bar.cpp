@@ -27,8 +27,8 @@
 
 #include "ui/progress_dlg.h"
 
-#include <QGraphicsOpacityEffect>
-#include <QPropertyAnimation>
+#include <QtWidgets/QGraphicsOpacityEffect>
+#include <QtCore/QPropertyAnimation>
 
 // XXX We should probably add an NSProgressIndicator to the dock icon
 // on OS X.

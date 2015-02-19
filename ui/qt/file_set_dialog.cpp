@@ -34,13 +34,13 @@
 #include "ui_file_set_dialog.h"
 #include "wireshark_application.h"
 
-#include <QDialogButtonBox>
-#include <QPushButton>
-#include <QDateTime>
-#include <QFontMetrics>
-#include <QFont>
-#include <QTreeWidgetItem>
-#include <QUrl>
+#include <QtWidgets/QDialogButtonBox>
+#include <QtWidgets/QPushButton>
+#include <QtCore/QDateTime>
+#include <QtGui/QFontMetrics>
+#include <QtGui/QFont>
+#include <QtWidgets/QTreeWidgetItem>
+#include <QtCore/QUrl>
 
 Q_DECLARE_METATYPE(fileset_entry *)
 
@@ -83,7 +83,7 @@ void FileSetDialog::fileClosed() {
     fs_ui_->fileSetTree->clear();
 }
 
-#include <QDebug>
+#include <QtCore/QDebug>
 void FileSetDialog::addFile(fileset_entry *entry) {
     QString created;
     QString modified;

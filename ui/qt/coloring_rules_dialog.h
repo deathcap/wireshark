@@ -22,7 +22,7 @@
 #ifndef COLORING_RULES_DIALOG_H
 #define COLORING_RULES_DIALOG_H
 
-#include <QDialog>
+#include <QtWidgets/QDialog>
 
 class QAbstractButton;
 class QTreeWidget;
@@ -34,7 +34,7 @@ namespace Ui {
 class ColoringRulesDialog;
 }
 
-#include <QStyledItemDelegate>
+#include <QtWidgets/QStyledItemDelegate>
 
 class ColoringRulesTreeDelegate : public QStyledItemDelegate
 {

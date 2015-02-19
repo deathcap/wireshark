@@ -28,9 +28,9 @@
 
 #include "color.h"
 
-#include <QBrush>
-#include <QColor>
-#include <QObject>
+#include <QtGui/QBrush>
+#include <QtGui/QColor>
+#include <QtCore/QObject>
 
 class ColorUtils : public QObject
 {

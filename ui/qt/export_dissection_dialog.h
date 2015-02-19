@@ -36,8 +36,8 @@
 #include "packet_format_group_box.h"
 #endif // Q_OS_WIN
 
-#include <QFileDialog>
-#include <QMap>
+#include <QtWidgets/QFileDialog>
+#include <QtCore/QMap>
 
 class ExportDissectionDialog : public QFileDialog
 {

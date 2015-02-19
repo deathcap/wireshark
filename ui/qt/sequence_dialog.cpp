@@ -31,10 +31,10 @@
 #include "sequence_diagram.h"
 #include "wireshark_application.h"
 
-#include <QDir>
-#include <QFileDialog>
-#include <QFontMetrics>
-#include <QPoint>
+#include <QtCore/QDir>
+#include <QtWidgets/QFileDialog>
+#include <QtGui/QFontMetrics>
+#include <QtCore/QPoint>
 
 // To do:
 // - Add UTF8 to text dump

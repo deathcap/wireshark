@@ -31,9 +31,9 @@
 #include <epan/column-info.h>
 #include <epan/packet.h>
 
-#include <QByteArray>
-#include <QList>
-#include <QVariant>
+#include <QtCore/QByteArray>
+#include <QtCore/QList>
+#include <QtCore/QVariant>
 
 class PacketListRecord
 {

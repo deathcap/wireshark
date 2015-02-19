@@ -62,21 +62,21 @@
 #  include "ui/win32/console_win32.h"
 #endif /* _WIN32 */
 
-#include <QDesktopServices>
-#include <QDir>
-#include <QEvent>
-#include <QFileOpenEvent>
-#include <QFontMetrics>
-#include <QLibraryInfo>
-#include <QLocale>
-#include <QMutableListIterator>
-#include <QSocketNotifier>
-#include <QThread>
-#include <QUrl>
+#include <QtGui/QDesktopServices>
+#include <QtCore/QDir>
+#include <QtCore/QEvent>
+#include <QtGui/QFileOpenEvent>
+#include <QtGui/QFontMetrics>
+#include <QtCore/QLibraryInfo>
+#include <QtCore/QLocale>
+#include <QtCore/QMutableListIterator>
+#include <QtCore/QSocketNotifier>
+#include <QtCore/QThread>
+#include <QtCore/QUrl>
 
 #ifdef Q_OS_WIN
-#include <QDebug>
-#include <QLibrary>
+#include <QtCore/QDebug>
+#include <QtCore/QLibrary>
 #endif
 
 WiresharkApplication *wsApp = NULL;

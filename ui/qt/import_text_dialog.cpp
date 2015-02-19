@@ -42,9 +42,9 @@
 #include <ui_import_text_dialog.h>
 #include "wireshark_application.h"
 
-#include <QFileDialog>
-#include <QDebug>
-#include <QFile>
+#include <QtWidgets/QFileDialog>
+#include <QtCore/QDebug>
+#include <QtCore/QFile>
 
 ImportTextDialog::ImportTextDialog(QWidget *parent) :
     QDialog(parent),

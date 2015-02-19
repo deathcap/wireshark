@@ -22,8 +22,8 @@
 #ifndef EXPORT_PDU_DIALOG_H
 #define EXPORT_PDU_DIALOG_H
 
-#include <QDialog>
-#include <QDebug>
+#include <QtWidgets/QDialog>
+#include <QtCore/QDebug>
 
 namespace Ui {
 class ExportPDUDialog;

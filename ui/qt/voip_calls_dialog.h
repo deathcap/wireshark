@@ -30,7 +30,7 @@
 
 #include "wireshark_dialog.h"
 
-#include <QMenu>
+#include <QtWidgets/QMenu>
 
 struct _capture_file;
 

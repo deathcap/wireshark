@@ -35,7 +35,7 @@ capture_file cfile;
 
 #include "ui/capture.h"
 
-#include <QFileInfo>
+#include <QtCore/QFileInfo>
 
 // To do:
 // - Add getters and (if needed) setters:

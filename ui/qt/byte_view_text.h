@@ -30,8 +30,8 @@
 
 #include "proto_tree.h"
 
-#include <QAbstractScrollArea>
-#include <QMenu>
+#include <QtWidgets/QAbstractScrollArea>
+#include <QtWidgets/QMenu>
 
 class QActionGroup;
 

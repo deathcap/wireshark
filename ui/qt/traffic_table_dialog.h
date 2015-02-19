@@ -34,9 +34,9 @@
 #include "filter_action.h"
 #include "wireshark_dialog.h"
 
-#include <QDialog>
-#include <QMenu>
-#include <QTreeWidgetItem>
+#include <QtWidgets/QDialog>
+#include <QtWidgets/QMenu>
+#include <QtWidgets/QTreeWidgetItem>
 
 class QCheckBox;
 class QDialogButtonBox;

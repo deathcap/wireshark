@@ -22,7 +22,7 @@
 #ifndef FOLLOW_STREAM_TEXT_H
 #define FOLLOW_STREAM_TEXT_H
 
-#include <QTextEdit>
+#include <QtWidgets/QTextEdit>
 
 class FollowStreamText : public QTextEdit
 {

@@ -52,15 +52,15 @@
 
 #include "frame_tvbuff.h"
 
-#include <QAction>
-#include <QActionGroup>
-#include <QContextMenuEvent>
-#include <QHeaderView>
-#include <QMessageBox>
-#include <QScrollBar>
-#include <QTabWidget>
-#include <QTextEdit>
-#include <QTreeWidget>
+#include <QtWidgets/QAction>
+#include <QtWidgets/QActionGroup>
+#include <QtGui/QContextMenuEvent>
+#include <QtWidgets/QHeaderView>
+#include <QtWidgets/QMessageBox>
+#include <QtWidgets/QScrollBar>
+#include <QtWidgets/QTabWidget>
+#include <QtWidgets/QTextEdit>
+#include <QtWidgets/QTreeWidget>
 
 // To do:
 // - Heading context menus

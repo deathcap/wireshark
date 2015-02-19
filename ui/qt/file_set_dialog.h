@@ -29,7 +29,7 @@
 #include "file.h"
 #include "fileset.h"
 
-#include <QDialog>
+#include <QtWidgets/QDialog>
 
 class QTreeWidgetItem;
 

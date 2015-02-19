@@ -28,20 +28,20 @@
 
 #include <epan/prefs-int.h>
 
-#include <QAbstractButton>
-#include <QButtonGroup>
-#include <QCheckBox>
-#include <QComboBox>
-#include <QFileDialog>
-#include <QHBoxLayout>
-#include <QLabel>
-#include <QLineEdit>
-#include <QPushButton>
-#include <QRadioButton>
-#include <QScrollBar>
-#include <QSpacerItem>
+#include <QtWidgets/QAbstractButton>
+#include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QCheckBox>
+#include <QtWidgets/QComboBox>
+#include <QtWidgets/QFileDialog>
+#include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QRadioButton>
+#include <QtWidgets/QScrollBar>
+#include <QtWidgets/QSpacerItem>
 
-#include <QDebug>
+#include <QtCore/QDebug>
 
 Q_DECLARE_METATYPE(pref_t *)
 

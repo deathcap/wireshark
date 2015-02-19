@@ -30,15 +30,15 @@
 
 #include "capture_filter_syntax_worker.h"
 
-#include <QMutexLocker>
-#include <QSet>
+#include <QtCore/QMutexLocker>
+#include <QtCore/QSet>
 
 // Must be global
 static QMutex pcap_compile_mtx_;
 
 #if 0
-#include <QDebug>
-#include <QThread>
+#include <QtCore/QDebug>
+#include <QtCore/QThread>
 #define DEBUG_SYNTAX_CHECK(state1, state2) qDebug() << "CF state" << QThread::currentThreadId() << state1 << "->" << state2 << ":" << filter_text_ << ":" << filter
 #else
 #define DEBUG_SYNTAX_CHECK(state1, state2)

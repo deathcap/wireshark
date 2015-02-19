@@ -22,7 +22,7 @@
 #ifndef COLUMN_PREFERENCES_FRAME_H
 #define COLUMN_PREFERENCES_FRAME_H
 
-#include <QFrame>
+#include <QtWidgets/QFrame>
 
 class QComboBox;
 class QLineEdit;

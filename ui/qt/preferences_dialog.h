@@ -32,8 +32,8 @@
 
 #include "wireshark_application.h"
 
-#include <QDialog>
-#include <QTreeWidgetItem>
+#include <QtWidgets/QDialog>
+#include <QtWidgets/QTreeWidgetItem>
 
 class QComboBox;
 

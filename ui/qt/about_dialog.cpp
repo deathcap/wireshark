@@ -54,9 +54,9 @@
 
 #include "qt_ui_utils.h"
 
-#include <QFontMetrics>
-#include <QTextStream>
-#include <QUrl>
+#include <QtGui/QFontMetrics>
+#include <QtCore/QTextStream>
+#include <QtCore/QUrl>
 
 
 // To do:

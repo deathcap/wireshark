@@ -22,8 +22,8 @@
 #ifndef CAPTURE_FILTER_EDIT_H
 #define CAPTURE_FILTER_EDIT_H
 
-#include <QThread>
-#include <QToolButton>
+#include <QtCore/QThread>
+#include <QtWidgets/QToolButton>
 #include "syntax_line_edit.h"
 #include "capture_filter_syntax_worker.h"
 

@@ -20,8 +20,8 @@
  */
 
 #include "label_stack.h"
-#include <QMouseEvent>
-#include <QContextMenuEvent>
+#include <QtGui/QMouseEvent>
+#include <QtGui/QContextMenuEvent>
 
 #include "tango_colors.h"
 

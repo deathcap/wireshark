@@ -28,12 +28,12 @@
 #include "file.h"
 #include "ui/qt/main_window.h"
 
-#include <QWidget>
-#include <QDir>
-#include <QFileDialog>
-#include <QPushButton>
+#include <QtWidgets/QWidget>
+#include <QtCore/QDir>
+#include <QtWidgets/QFileDialog>
+#include <QtWidgets/QPushButton>
 
-//#include <QDebug>
+//#include <QtCore/QDebug>
 
 SCTPAllAssocsDialog::SCTPAllAssocsDialog(QWidget *parent, capture_file *cf) :
     QDialog(parent),

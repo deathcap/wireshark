@@ -32,9 +32,9 @@
 
 #include "qt_ui_utils.h"
 
-#include <QLineEdit>
-#include <QKeyEvent>
-#include <QTreeWidgetItemIterator>
+#include <QtWidgets/QLineEdit>
+#include <QtGui/QKeyEvent>
+#include <QtWidgets/QTreeWidgetItemIterator>
 
 const int enabled_col_    = 0;
 const int label_col_      = 1;

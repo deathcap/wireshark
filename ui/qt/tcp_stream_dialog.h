@@ -33,9 +33,9 @@
 #include "ui/tap-tcp-stream.h"
 
 #include "qcustomplot.h"
-#include <QDialog>
-#include <QMenu>
-#include <QRubberBand>
+#include <QtWidgets/QDialog>
+#include <QtWidgets/QMenu>
+#include <QtWidgets/QRubberBand>
 
 namespace Ui {
 class TCPStreamDialog;

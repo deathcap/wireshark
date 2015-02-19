@@ -43,12 +43,12 @@
 #include "syntax_line_edit.h"
 #include "wireshark_application.h"
 
-#include <QColorDialog>
-#include <QDir>
-#include <QFileDialog>
-#include <QMessageBox>
-#include <QPushButton>
-#include <QTreeWidgetItemIterator>
+#include <QtWidgets/QColorDialog>
+#include <QtCore/QDir>
+#include <QtWidgets/QFileDialog>
+#include <QtWidgets/QMessageBox>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QTreeWidgetItemIterator>
 
 /*
  * @file Coloring Rules dialog

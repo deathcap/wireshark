@@ -105,12 +105,12 @@
 #include "voip_calls_dialog.h"
 #include "wireshark_application.h"
 
-#include <QClipboard>
-#include <QMessageBox>
-#include <QMetaObject>
-#include <QToolBar>
+#include <QtGui/QClipboard>
+#include <QtWidgets/QMessageBox>
+#include <QtCore/QMetaObject>
+#include <QtWidgets/QToolBar>
 
-#include <QDebug>
+#include <QtCore/QDebug>
 
 //
 // Public slots

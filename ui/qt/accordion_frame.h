@@ -22,7 +22,7 @@
 #ifndef ACCORDION_FRAME_H
 #define ACCORDION_FRAME_H
 
-#include <QFrame>
+#include <QtWidgets/QFrame>
 
 class QPropertyAnimation;
 

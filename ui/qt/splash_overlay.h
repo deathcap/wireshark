@@ -28,8 +28,8 @@
 
 #include "register.h"
 
-#include <QWidget>
-#include <QTime>
+#include <QtWidgets/QWidget>
+#include <QtCore/QTime>
 
 void splash_update(register_action_e action, const char *message, void *dummy);
 

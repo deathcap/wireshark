@@ -33,11 +33,11 @@
 #include "ui/tap-sctp-analysis.h"
 #include "sctp_all_assocs_dialog.h"
 
-#include <QDialog>
-#include <QTabWidget>
-#include <QObject>
-#include <QGridLayout>
-#include <QMessageBox>
+#include <QtWidgets/QDialog>
+#include <QtWidgets/QTabWidget>
+#include <QtCore/QObject>
+#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QMessageBox>
 
 
 namespace Ui {

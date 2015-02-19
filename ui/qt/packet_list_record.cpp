@@ -31,7 +31,7 @@
 #include "color_filters.h"
 #include "frame_tvbuff.h"
 
-#include <QStringList>
+#include <QtCore/QStringList>
 
 QMap<int, int> PacketListRecord::cinfo_column_;
 unsigned PacketListRecord::col_data_ver_ = 1;

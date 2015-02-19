@@ -22,10 +22,10 @@
 #ifndef LABEL_STACK_H
 #define LABEL_STACK_H
 
-#include <QLabel>
-#include <QStack>
-#include <QTime>
-#include <QTimer>
+#include <QtWidgets/QLabel>
+#include <QtCore/QStack>
+#include <QtCore/QTime>
+#include <QtCore/QTimer>
 
 class LabelStack : public QLabel
 {

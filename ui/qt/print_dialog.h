@@ -28,10 +28,10 @@
 
 #include "file.h"
 
-#include <QDialog>
-#include <QPrinter>
-#include <QPrintPreviewWidget>
-#include <QPushButton>
+#include <QtWidgets/QDialog>
+#include <QtPrintSupport/QPrinter>
+#include <QtPrintSupport/QPrintPreviewWidget>
+#include <QtWidgets/QPushButton>
 
 namespace Ui {
 class PrintDialog;

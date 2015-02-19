@@ -38,10 +38,10 @@
 
 #include "ui/tap-sctp-analysis.h"
 
-#include <QTableWidgetItem>
-#include <QDialog>
-#include <QMenu>
-#include <QContextMenuEvent>
+#include <QtWidgets/QTableWidgetItem>
+#include <QtWidgets/QDialog>
+#include <QtWidgets/QMenu>
+#include <QtGui/QContextMenuEvent>
 
 namespace Ui {
 class SCTPChunkStatisticsDialog;

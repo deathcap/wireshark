@@ -36,7 +36,7 @@
 #include "ui/ui_util.h"
 #include "ui/recent.h"
 
-#include <QMessageBox>
+#include <QtWidgets/QMessageBox>
 
 static guint num_selected = 0;
 

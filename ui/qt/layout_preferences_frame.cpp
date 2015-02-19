@@ -22,11 +22,11 @@
 #include "layout_preferences_frame.h"
 #include "ui_layout_preferences_frame.h"
 
-#include <QAbstractButton>
-#include <QToolButton>
-#include <QRadioButton>
+#include <QtWidgets/QAbstractButton>
+#include <QtWidgets/QToolButton>
+#include <QtWidgets/QRadioButton>
 
-#include <QDebug>
+#include <QtCore/QDebug>
 #include <epan/prefs-int.h>
 
 LayoutPreferencesFrame::LayoutPreferencesFrame(QWidget *parent) :

@@ -22,7 +22,7 @@
 #ifndef ELIDED_LABEL_H
 #define ELIDED_LABEL_H
 
-#include <QLabel>
+#include <QtWidgets/QLabel>
 
 class ElidedLabel : public QLabel
 {

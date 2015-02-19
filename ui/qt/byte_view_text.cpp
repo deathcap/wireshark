@@ -29,10 +29,10 @@
 #include "color_utils.h"
 #include "wireshark_application.h"
 
-#include <QActionGroup>
-#include <QMouseEvent>
-#include <QPainter>
-#include <QScrollBar>
+#include <QtWidgets/QActionGroup>
+#include <QtGui/QMouseEvent>
+#include <QtGui/QPainter>
+#include <QtWidgets/QScrollBar>
 
 // To do:
 // - Add recent settings and context menu items to show/hide the offset,

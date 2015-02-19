@@ -27,8 +27,8 @@
 #include <glib.h>
 #include "capture_opts.h"
 
-#include <QDialog>
-#include <QStyledItemDelegate>
+#include <QtWidgets/QDialog>
+#include <QtWidgets/QStyledItemDelegate>
 
 class QTreeWidget;
 class QTreeWidgetItem;

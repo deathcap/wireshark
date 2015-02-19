@@ -25,7 +25,7 @@
 #include "config.h"
 
 #ifdef HAVE_PCAP_REMOTE
-#include <QDialog>
+#include <QtWidgets/QDialog>
 #include "capture_opts.h"
 
 namespace Ui {

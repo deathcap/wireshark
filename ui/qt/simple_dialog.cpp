@@ -28,8 +28,8 @@
 #include "qt_ui_utils.h"
 #include "wireshark_application.h"
 
-#include <QMessageBox>
-#include <QTextCodec>
+#include <QtWidgets/QMessageBox>
+#include <QtCore/QTextCodec>
 
 /* Simple dialog function - Displays a dialog box with the supplied message
  * text.

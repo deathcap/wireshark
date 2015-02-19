@@ -36,12 +36,12 @@
 
 #include "wireshark_application.h"
 
-#include <QCheckBox>
-#include <QDesktopServices>
-#include <QDialogButtonBox>
-#include <QMessageBox>
-#include <QPushButton>
-#include <QUrl>
+#include <QtWidgets/QCheckBox>
+#include <QtGui/QDesktopServices>
+#include <QtWidgets/QDialogButtonBox>
+#include <QtWidgets/QMessageBox>
+#include <QtWidgets/QPushButton>
+#include <QtCore/QUrl>
 
 const QString table_name_ = QObject::tr("Endpoint");
 EndpointDialog::EndpointDialog(QWidget &parent, CaptureFile &cf, int cli_proto_id, const char *filter) :

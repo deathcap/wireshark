@@ -21,8 +21,8 @@
 
 #include "byte_view_tab.h"
 #include "byte_view_text.h"
-#include <QTabBar>
-#include <QTreeWidgetItem>
+#include <QtWidgets/QTabBar>
+#include <QtWidgets/QTreeWidgetItem>
 
 ByteViewTab::ByteViewTab(QWidget *parent) :
     QTabWidget(parent)

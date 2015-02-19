@@ -26,7 +26,7 @@
 
 #include "ui/utf8_entities.h"
 
-#include <QAction>
+#include <QtWidgets/QAction>
 
 class FilterAction : public QAction
 {

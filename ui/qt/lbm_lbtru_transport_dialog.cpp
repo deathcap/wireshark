@@ -29,12 +29,12 @@
 #include "qt_ui_utils.h"
 #include "wireshark_application.h"
 
-#include <QClipboard>
-#include <QMessageBox>
-#include <QTreeWidget>
-#include <QTreeWidgetItemIterator>
-#include <QMenu>
-#include <QTreeWidgetItem>
+#include <QtGui/QClipboard>
+#include <QtWidgets/QMessageBox>
+#include <QtWidgets/QTreeWidget>
+#include <QtWidgets/QTreeWidgetItemIterator>
+#include <QtWidgets/QMenu>
+#include <QtWidgets/QTreeWidgetItem>
 
 #include <epan/packet_info.h>
 #include <epan/tap.h>
@@ -42,7 +42,7 @@
 #include <epan/dissectors/packet-lbm.h>
 #include <wsutil/nstime.h>
 
-#include <QDebug>
+#include <QtCore/QDebug>
 
 namespace
 {

@@ -31,7 +31,7 @@
 #include "display_filter_combo.h"
 #include "wireshark_application.h"
 
-#include <QCompleter>
+#include <QtWidgets/QCompleter>
 
 // If we ever add support for multiple windows this will need to be replaced.
 static DisplayFilterCombo *cur_display_filter_combo = NULL;

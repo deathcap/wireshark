@@ -22,7 +22,7 @@
 #ifndef CAPTURE_INFO_DIALOG_H
 #define CAPTURE_INFO_DIALOG_H
 
-#include <QDialog>
+#include <QtWidgets/QDialog>
 
 class CaptureInfoDialog : public QDialog
 {

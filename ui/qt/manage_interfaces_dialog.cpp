@@ -40,15 +40,15 @@
 
 #include "wireshark_application.h"
 
-#include <QDebug>
+#include <QtCore/QDebug>
 
 #ifdef HAVE_LIBPCAP
-#include <QCheckBox>
-#include <QFileDialog>
-#include <QHBoxLayout>
-#include <QLineEdit>
-#include <QStandardItemModel>
-#include <QTreeWidgetItemIterator>
+#include <QtWidgets/QCheckBox>
+#include <QtWidgets/QFileDialog>
+#include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QLineEdit>
+#include <QtGui/QStandardItemModel>
+#include <QtWidgets/QTreeWidgetItemIterator>
 
 // To do:
 // - Check the validity of pipes and remote interfaces and provide feedback

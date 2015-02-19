@@ -27,8 +27,8 @@
 
 #ifdef HAVE_LIBPCAP
 
-#include <QDialog>
-#include <QPushButton>
+#include <QtWidgets/QDialog>
+#include <QtWidgets/QPushButton>
 
 typedef struct if_stat_cache_s if_stat_cache_t;
 
@@ -39,7 +39,7 @@ namespace Ui {
 class CaptureInterfacesDialog;
 }
 
-#include <QStyledItemDelegate>
+#include <QtWidgets/QStyledItemDelegate>
 
 class InterfaceTreeDelegate : public QStyledItemDelegate
 {

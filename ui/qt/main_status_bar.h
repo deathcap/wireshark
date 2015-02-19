@@ -26,9 +26,9 @@
 #include "label_stack.h"
 #include "progress_bar.h"
 
-#include <QLabel>
-#include <QMenu>
-#include <QStatusBar>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QMenu>
+#include <QtWidgets/QStatusBar>
 
 #include "cfile.h"
 

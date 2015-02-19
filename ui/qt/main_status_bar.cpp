@@ -35,9 +35,9 @@
 #include "main_status_bar.h"
 #include "profile_dialog.h"
 
-#include <QSplitter>
-#include <QHBoxLayout>
-#include <QAction>
+#include <QtWidgets/QSplitter>
+#include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QAction>
 
 #include "tango_colors.h"
 

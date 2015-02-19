@@ -26,8 +26,8 @@
 #include "color_utils.h"
 #include "wireshark_application.h"
 
-#include <QFontDialog>
-#include <QColorDialog>
+#include <QtWidgets/QFontDialog>
+#include <QtWidgets/QColorDialog>
 
 #include <epan/prefs-int.h>
 

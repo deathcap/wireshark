@@ -33,7 +33,7 @@
 #include "ui/capture_ui_utils.h"
 #endif
 
-#include <QTreeWidget>
+#include <QtWidgets/QTreeWidget>
 
 typedef QList<int> PointList;
 

@@ -34,7 +34,7 @@
 
 #include <wsutil/str_util.h>
 
-#include <QFontDatabase>
+#include <QtGui/QFontDatabase>
 
 /* Make the format_size_flags_e enum usable in C++ */
 format_size_flags_e operator|(format_size_flags_e lhs, format_size_flags_e rhs) {

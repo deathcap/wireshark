@@ -22,7 +22,7 @@
 #ifndef SPARKLINE_DELEGATE_H
 #define SPARKLINE_DELEGATE_H
 
-#include <QStyledItemDelegate>
+#include <QtWidgets/QStyledItemDelegate>
 
 class SparkLineDelegate : public QStyledItemDelegate
 {

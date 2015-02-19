@@ -34,13 +34,13 @@
 #include "wireshark_application.h"
 #include "color_utils.h"
 
-#include <QBrush>
-#include <QDir>
-#include <QFont>
-#include <QMessageBox>
-#include <QPushButton>
-#include <QTreeWidgetItem>
-#include <QUrl>
+#include <QtGui/QBrush>
+#include <QtCore/QDir>
+#include <QtGui/QFont>
+#include <QtWidgets/QMessageBox>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QTreeWidgetItem>
+#include <QtCore/QUrl>
 
 Q_DECLARE_METATYPE(GList *)
 

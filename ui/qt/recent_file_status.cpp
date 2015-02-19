@@ -21,7 +21,7 @@
 
 #include "recent_file_status.h"
 
-#include <QFileInfo>
+#include <QtCore/QFileInfo>
 
 // Sigh. The Qt 4 documentation says we should subclass QThread here. Other sources
 // insist that we should subclass QObject, then move it to a newly created QThread.

@@ -28,8 +28,8 @@
 
 #include <epan/address.h>
 
-#include <QObject>
-#include <QMultiMap>
+#include <QtCore/QObject>
+#include <QtCore/QMultiMap>
 #include "qcustomplot.h"
 
 struct _seq_analysis_info;

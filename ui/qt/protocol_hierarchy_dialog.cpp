@@ -31,11 +31,11 @@
 #include "qt_ui_utils.h"
 #include "wireshark_application.h"
 
-#include <QClipboard>
-#include <QPainter>
-#include <QPushButton>
-#include <QTextStream>
-#include <QTreeWidgetItemIterator>
+#include <QtGui/QClipboard>
+#include <QtGui/QPainter>
+#include <QtWidgets/QPushButton>
+#include <QtCore/QTextStream>
+#include <QtWidgets/QTreeWidgetItemIterator>
 
 /*
  * @file Protocol Hierarchy Statistics dialog

@@ -32,8 +32,8 @@
 
 #include "ui/tap-sctp-analysis.h"
 
-#include <QFileDialog>
-#include <QMessageBox>
+#include <QtWidgets/QFileDialog>
+#include <QtWidgets/QMessageBox>
 
 #include "qcustomplot.h"
 #include "wireshark_application.h"

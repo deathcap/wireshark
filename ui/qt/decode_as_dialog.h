@@ -28,8 +28,8 @@
 
 #include "cfile.h"
 
-#include <QDialog>
-#include <QMap>
+#include <QtWidgets/QDialog>
+#include <QtCore/QMap>
 
 class QTreeWidgetItem;
 class QComboBox;

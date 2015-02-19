@@ -22,7 +22,7 @@
 #include "packet_format_group_box.h"
 #include "ui_packet_format_group_box.h"
 
-#include <QStyle>
+#include <QtWidgets/QStyle>
 
 PacketFormatGroupBox::PacketFormatGroupBox(QWidget *parent) :
     QGroupBox(parent),

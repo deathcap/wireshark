@@ -22,8 +22,8 @@
 #include "related_packet_delegate.h"
 #include "packet_list_record.h"
 
-#include <QPainter>
-#include <QApplication>
+#include <QtGui/QPainter>
+#include <QtWidgets/QApplication>
 
 void RelatedPacketDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
                               const QModelIndex &index) const

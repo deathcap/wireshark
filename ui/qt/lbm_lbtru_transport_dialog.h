@@ -30,7 +30,7 @@
 
 #include "cfile.h"
 #include <epan/packet_info.h>
-#include <QDialog>
+#include <QtWidgets/QDialog>
 
 class QHeaderView;
 class QMenu;

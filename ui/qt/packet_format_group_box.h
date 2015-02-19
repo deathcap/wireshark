@@ -23,7 +23,7 @@
 #ifndef PACKET_FORMAT_GROUP_BOX_H
 #define PACKET_FORMAT_GROUP_BOX_H
 
-#include <QGroupBox>
+#include <QtWidgets/QGroupBox>
 
 namespace Ui {
 class PacketFormatGroupBox;

@@ -33,18 +33,18 @@
 
 #include "wireshark_application.h"
 
-#include <QCheckBox>
-#include <QClipboard>
-#include <QContextMenuEvent>
-#include <QDialogButtonBox>
-#include <QList>
-#include <QMap>
-#include <QMessageBox>
-#include <QPushButton>
-#include <QTabWidget>
-#include <QTreeWidget>
-#include <QTextStream>
-#include <QToolButton>
+#include <QtWidgets/QCheckBox>
+#include <QtGui/QClipboard>
+#include <QtGui/QContextMenuEvent>
+#include <QtWidgets/QDialogButtonBox>
+#include <QtCore/QList>
+#include <QtCore/QMap>
+#include <QtWidgets/QMessageBox>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QTabWidget>
+#include <QtWidgets/QTreeWidget>
+#include <QtCore/QTextStream>
+#include <QtWidgets/QToolButton>
 
 // To do:
 // - Add "copy" items to the menu.

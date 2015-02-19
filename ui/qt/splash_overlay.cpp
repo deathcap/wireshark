@@ -23,7 +23,7 @@
 #include "ui_splash_overlay.h"
 #include "wireshark_application.h"
 
-#include <QPainter>
+#include <QtGui/QPainter>
 
 #include "ui/util.h"
 #include "ui/utf8_entities.h"
@@ -100,7 +100,7 @@ SplashOverlay::~SplashOverlay()
 
 // Useful for debugging on fast machines.
 #ifdef THROTTLE_STARTUP
-#include <QThread>
+#include <QtCore/QThread>
 class ThrottleThread : public QThread
 {
 public:

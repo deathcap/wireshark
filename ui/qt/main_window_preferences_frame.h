@@ -24,7 +24,7 @@
 
 #include "preferences_dialog.h"
 
-#include <QFrame>
+#include <QtWidgets/QFrame>
 
 namespace Ui {
 class MainWindowPreferencesFrame;

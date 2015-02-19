@@ -22,7 +22,7 @@
 #ifndef SYNTAX_LINE_EDIT_H
 #define SYNTAX_LINE_EDIT_H
 
-#include <QLineEdit>
+#include <QtWidgets/QLineEdit>
 
 class SyntaxLineEdit : public QLineEdit
 {

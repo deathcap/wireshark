@@ -25,7 +25,7 @@
 #include "config.h"
 #include <glib.h>
 
-#include <QDialog>
+#include <QtWidgets/QDialog>
 
 namespace Ui {
 class SCTPGraphArwndDialog;

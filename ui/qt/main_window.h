@@ -39,13 +39,13 @@
 #endif
 #include <capchild/capture_session.h>
 
-#include <QMainWindow>
-#include <QSplitter>
+#include <QtWidgets/QMainWindow>
+#include <QtWidgets/QSplitter>
 
 #ifdef _WIN32
 # include <QTimer>
 #else
-# include <QSocketNotifier>
+# include <QtCore/QSocketNotifier>
 #endif
 
 #include "capture_file.h"

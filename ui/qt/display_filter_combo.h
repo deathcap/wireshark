@@ -22,8 +22,8 @@
 #ifndef DISPLAY_FILTER_COMBO_H
 #define DISPLAY_FILTER_COMBO_H
 
-#include <QComboBox>
-#include <QList>
+#include <QtWidgets/QComboBox>
+#include <QtCore/QList>
 
 class DisplayFilterCombo : public QComboBox
 {

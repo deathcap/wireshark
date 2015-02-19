@@ -56,22 +56,22 @@
 
 #include "qt_ui_utils.h"
 
-#include <QAction>
-#include <QActionGroup>
-#include <QDesktopWidget>
-#include <QKeyEvent>
-#include <QMessageBox>
-#include <QMetaObject>
-#include <QPropertyAnimation>
-#include <QTabWidget>
-#include <QToolButton>
-#include <QTreeWidget>
+#include <QtWidgets/QAction>
+#include <QtWidgets/QActionGroup>
+#include <QtWidgets/QDesktopWidget>
+#include <QtGui/QKeyEvent>
+#include <QtWidgets/QMessageBox>
+#include <QtCore/QMetaObject>
+#include <QtCore/QPropertyAnimation>
+#include <QtWidgets/QTabWidget>
+#include <QtWidgets/QToolButton>
+#include <QtWidgets/QTreeWidget>
 
 #if defined(QT_MACEXTRAS_LIB) && QT_VERSION < QT_VERSION_CHECK(5, 2, 1)
 #include <QtMacExtras/QMacNativeToolBar>
 #endif
 
-#include <QDebug>
+#include <QtCore/QDebug>
 
 //menu_recent_file_write_all
 

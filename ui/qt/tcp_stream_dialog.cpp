@@ -32,13 +32,13 @@
 #include "qt_ui_utils.h"
 #include "wireshark_application.h"
 
-#include <QCursor>
-#include <QDir>
-#include <QFileDialog>
-#include <QIcon>
-#include <QPushButton>
+#include <QtGui/QCursor>
+#include <QtCore/QDir>
+#include <QtWidgets/QFileDialog>
+#include <QtGui/QIcon>
+#include <QtWidgets/QPushButton>
 
-#include <QDebug>
+#include <QtCore/QDebug>
 
 // To do:
 // - Show a message or disable the graph if we don't have any data.

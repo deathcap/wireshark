@@ -52,8 +52,8 @@
 
 #include "wireshark_application.h"
 
-#include <QFile>
-#include <QStyle>
+#include <QtCore/QFile>
+#include <QtWidgets/QStyle>
 
 QString path_pfx_ = ":/icons/toolbar/";
 

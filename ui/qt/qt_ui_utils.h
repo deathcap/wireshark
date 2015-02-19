@@ -33,7 +33,7 @@
 
 #include <glib.h>
 
-#include <QString>
+#include <QtCore/QString>
 
 class QFont;
 

@@ -30,10 +30,10 @@
 
 #include "wireshark_application.h"
 
-#include <QDialogButtonBox>
-#include <QPushButton>
-#include <QMessageBox>
-#include <QFileDialog>
+#include <QtWidgets/QDialogButtonBox>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QMessageBox>
+#include <QtWidgets/QFileDialog>
 
 extern "C" {
 

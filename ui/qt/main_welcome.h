@@ -22,7 +22,7 @@
 #ifndef MAIN_WELCOME_H
 #define MAIN_WELCOME_H
 
-#include <QFrame>
+#include <QtWidgets/QFrame>
 
 class QListWidget;
 class QListWidgetItem;

@@ -29,12 +29,12 @@
 #include "qt_ui_utils.h"
 #include "wireshark_application.h"
 
-#include <QClipboard>
-#include <QMenu>
-#include <QMessageBox>
-#include <QTreeWidget>
-#include <QTreeWidgetItemIterator>
-#include <QMenu>
+#include <QtGui/QClipboard>
+#include <QtWidgets/QMenu>
+#include <QtWidgets/QMessageBox>
+#include <QtWidgets/QTreeWidget>
+#include <QtWidgets/QTreeWidgetItemIterator>
+#include <QtWidgets/QMenu>
 
 #include <epan/packet_info.h>
 #include <epan/tap.h>

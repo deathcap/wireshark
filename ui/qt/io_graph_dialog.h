@@ -32,8 +32,8 @@
 
 #include "wireshark_dialog.h"
 
-#include <QIcon>
-#include <QMenu>
+#include <QtGui/QIcon>
+#include <QtWidgets/QMenu>
 
 class QComboBox;
 class QLineEdit;

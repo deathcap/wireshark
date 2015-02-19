@@ -30,8 +30,8 @@
 
 #include "syntax_line_edit.h"
 
-#include <QDialog>
-#include <QPushButton>
+#include <QtWidgets/QDialog>
+#include <QtWidgets/QPushButton>
 
 namespace Ui {
 class TimeShiftDialog;

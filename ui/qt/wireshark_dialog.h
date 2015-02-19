@@ -24,7 +24,7 @@
 
 #include "capture_file.h"
 
-#include <QDialog>
+#include <QtWidgets/QDialog>
 
 class WiresharkDialog : public QDialog
 {

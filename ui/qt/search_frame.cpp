@@ -28,8 +28,8 @@
 #include <epan/strutil.h>
 
 #include "wireshark_application.h"
-#include <QKeyEvent>
-#include <QCheckBox>
+#include <QtGui/QKeyEvent>
+#include <QtWidgets/QCheckBox>
 
 enum {
     in_packet_list_,

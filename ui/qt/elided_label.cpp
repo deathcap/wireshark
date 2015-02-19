@@ -21,8 +21,8 @@
 
 #include "elided_label.h"
 
-#include <QFontMetrics>
-#include <QResizeEvent>
+#include <QtGui/QFontMetrics>
+#include <QtGui/QResizeEvent>
 
 ElidedLabel::ElidedLabel(QWidget *parent) :
     QLabel(parent),

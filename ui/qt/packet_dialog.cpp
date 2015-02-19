@@ -35,7 +35,7 @@
 #include "proto_tree.h"
 #include "wireshark_application.h"
 
-#include <QTreeWidgetItemIterator>
+#include <QtWidgets/QTreeWidgetItemIterator>
 
 // To do:
 // - Find a way to preserve the byte view after the file closes.

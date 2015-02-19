@@ -33,10 +33,10 @@
 
 #include "wireshark_application.h"
 
-#include <QCheckBox>
-#include <QDialogButtonBox>
-#include <QMessageBox>
-#include <QPushButton>
+#include <QtWidgets/QCheckBox>
+#include <QtWidgets/QDialogButtonBox>
+#include <QtWidgets/QMessageBox>
+#include <QtWidgets/QPushButton>
 
 // To do:
 // - https://bugs.wireshark.org/bugzilla/show_bug.cgi?id=6727

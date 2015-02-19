@@ -31,10 +31,10 @@
 
 #include "wireshark_application.h"
 
-#include <QComboBox>
-#include <QFont>
-#include <QFontMetrics>
-#include <QLineEdit>
+#include <QtWidgets/QComboBox>
+#include <QtGui/QFont>
+#include <QtGui/QFontMetrics>
+#include <QtWidgets/QLineEdit>
 
 // To do:
 // - Ranges

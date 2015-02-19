@@ -30,12 +30,12 @@
 
 #include "ui/help_url.h"
 
-#include <QApplication>
-#include <QDir>
-#include <QFont>
-#include <QIcon>
-#include <QTimer>
-#include <QTranslator>
+#include <QtWidgets/QApplication>
+#include <QtCore/QDir>
+#include <QtGui/QFont>
+#include <QtGui/QIcon>
+#include <QtCore/QTimer>
+#include <QtCore/QTranslator>
 
 struct _e_prefs;
 

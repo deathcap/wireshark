@@ -26,8 +26,8 @@
 
 #include <epan/proto.h>
 
-#include <QTreeWidget>
-#include <QMenu>
+#include <QtWidgets/QTreeWidget>
+#include <QtWidgets/QMenu>
 
 Q_DECLARE_METATYPE(field_info *)
 

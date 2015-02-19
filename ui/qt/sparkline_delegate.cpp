@@ -21,8 +21,8 @@
 
 #include "sparkline_delegate.h"
 
-#include <QPainter>
-#include <QApplication>
+#include <QtGui/QPainter>
+#include <QtWidgets/QApplication>
 
 #define SPARKLINE_MIN_EM_WIDTH 10
 

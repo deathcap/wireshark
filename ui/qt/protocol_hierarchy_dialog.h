@@ -25,7 +25,7 @@
 #include "filter_action.h"
 #include "wireshark_dialog.h"
 
-#include <QMenu>
+#include <QtWidgets/QMenu>
 
 class QPushButton;
 class QTreeWidgetItem;
@@ -34,7 +34,7 @@ namespace Ui {
 class ProtocolHierarchyDialog;
 }
 
-#include <QStyledItemDelegate>
+#include <QtWidgets/QStyledItemDelegate>
 
 class PercentBarDelegate : public QStyledItemDelegate
 {

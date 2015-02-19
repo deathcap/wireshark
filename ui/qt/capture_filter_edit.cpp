@@ -31,8 +31,8 @@
 #include "capture_filter_edit.h"
 #include "wireshark_application.h"
 
-#include <QPainter>
-#include <QStyleOptionFrame>
+#include <QtGui/QPainter>
+#include <QtWidgets/QStyleOptionFrame>
 
 #include "ui/utf8_entities.h"
 #include "qt_ui_utils.h"

@@ -26,8 +26,8 @@
 
 #include "ui/rtp_stream.h"
 
-#include <QAbstractButton>
-#include <QMenu>
+#include <QtWidgets/QAbstractButton>
+#include <QtWidgets/QMenu>
 
 namespace Ui {
 class RtpStreamDialog;

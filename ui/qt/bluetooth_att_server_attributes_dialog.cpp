@@ -30,10 +30,10 @@
 
 #include "ui/simple_dialog.h"
 
-#include <QClipboard>
-#include <QContextMenuEvent>
-#include <QPushButton>
-#include <QTreeWidget>
+#include <QtGui/QClipboard>
+#include <QtGui/QContextMenuEvent>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QTreeWidget>
 
 static const int column_number_handle = 0;
 static const int column_number_uuid = 1;

@@ -40,18 +40,18 @@
 #include "uat_dialog.h"
 #include "wireshark_application.h"
 
-#include <QColorDialog>
-#include <QComboBox>
-#include <QFileDialog>
-#include <QFrame>
-#include <QHBoxLayout>
-#include <QKeyEvent>
-#include <QLineEdit>
-#include <QMessageBox>
-#include <QSpacerItem>
-#include <QTreeWidgetItemIterator>
+#include <QtWidgets/QColorDialog>
+#include <QtWidgets/QComboBox>
+#include <QtWidgets/QFileDialog>
+#include <QtWidgets/QFrame>
+#include <QtWidgets/QHBoxLayout>
+#include <QtGui/QKeyEvent>
+#include <QtWidgets/QLineEdit>
+#include <QtWidgets/QMessageBox>
+#include <QtWidgets/QSpacerItem>
+#include <QtWidgets/QTreeWidgetItemIterator>
 
-#include <QDebug>
+#include <QtCore/QDebug>
 
 Q_DECLARE_METATYPE(pref_t *)
 Q_DECLARE_METATYPE(QStackedWidget *)

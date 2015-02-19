@@ -22,12 +22,12 @@
 #include "print_dialog.h"
 #include "ui_print_dialog.h"
 
-#include <QPrintDialog>
-#include <QPageSetupDialog>
-#include <QPainter>
-#include <QPaintEngine>
-#include <QKeyEvent>
-#include <QMessageBox>
+#include <QtPrintSupport/QPrintDialog>
+#include <QtPrintSupport/QPageSetupDialog>
+#include <QtGui/QPainter>
+#include <QtGui/QPaintEngine>
+#include <QtGui/QKeyEvent>
+#include <QtWidgets/QMessageBox>
 
 #include "wireshark_application.h"
 

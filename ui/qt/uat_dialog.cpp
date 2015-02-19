@@ -32,17 +32,17 @@
 
 #include "qt_ui_utils.h"
 
-#include <QComboBox>
-#include <QDesktopServices>
-#include <QFileDialog>
-#include <QFont>
-#include <QKeyEvent>
-#include <QPushButton>
-#include <QTreeWidget>
-#include <QTreeWidgetItemIterator>
-#include <QUrl>
+#include <QtWidgets/QComboBox>
+#include <QtGui/QDesktopServices>
+#include <QtWidgets/QFileDialog>
+#include <QtGui/QFont>
+#include <QtGui/QKeyEvent>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QTreeWidget>
+#include <QtWidgets/QTreeWidgetItemIterator>
+#include <QtCore/QUrl>
 
-#include <QDebug>
+#include <QtCore/QDebug>
 
 UatDialog::UatDialog(QWidget *parent, epan_uat *uat) :
     QDialog(parent),

@@ -41,12 +41,12 @@
 #include "sequence_diagram.h"
 #include "wireshark_application.h"
 
-#include <QDir>
-#include <QFileDialog>
-#include <QFontMetrics>
-#include <QPoint>
+#include <QtCore/QDir>
+#include <QtWidgets/QFileDialog>
+#include <QtGui/QFontMetrics>
+#include <QtCore/QPoint>
 
-#include <QDebug>
+#include <QtCore/QDebug>
 
 static gboolean lbm_uimflow_add_to_graph(seq_analysis_info_t * seq_info, packet_info * pinfo, const lbm_uim_stream_info_t * stream_info)
 {

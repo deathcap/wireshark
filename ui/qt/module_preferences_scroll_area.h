@@ -30,7 +30,7 @@
 
 #include <epan/prefs.h>
 
-#include <QScrollArea>
+#include <QtWidgets/QScrollArea>
 
 namespace Ui {
 class ModulePreferencesScrollArea;

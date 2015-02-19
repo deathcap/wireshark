@@ -22,7 +22,7 @@
 #ifndef PROFILE_DIALOG_H
 #define PROFILE_DIALOG_H
 
-#include <QDialog>
+#include <QtWidgets/QDialog>
 
 class QPushButton;
 class QTreeWidgetItem;

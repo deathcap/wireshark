@@ -32,8 +32,8 @@
 
 #include "ui/tap-sctp-analysis.h"
 
-#include <QDialog>
-#include <QObject>
+#include <QtWidgets/QDialog>
+#include <QtCore/QObject>
 
 namespace Ui {
 class SCTPAllAssocsDialog;

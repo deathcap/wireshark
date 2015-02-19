@@ -38,10 +38,10 @@
 #include "syntax_line_edit.h"
 #include "wireshark_application.h"
 
-#include <QComboBox>
-#include <QTreeWidgetItemIterator>
-#include <QLineEdit>
-#include <QKeyEvent>
+#include <QtWidgets/QComboBox>
+#include <QtWidgets/QTreeWidgetItemIterator>
+#include <QtWidgets/QLineEdit>
+#include <QtGui/QKeyEvent>
 
 const int visible_col_           = 0;
 const int title_col_             = 1;

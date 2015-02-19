@@ -36,7 +36,7 @@
 
 #include "wireshark_dialog.h"
 
-#include <QMetaType>
+#include <QtCore/QMetaType>
 
 class QTreeWidgetItem;
 class QAbstractButton;

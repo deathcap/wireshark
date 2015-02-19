@@ -38,9 +38,9 @@
 
 #include "wireshark_application.h"
 
-#include <QDialogButtonBox>
-#include <QGridLayout>
-#include <QPushButton>
+#include <QtWidgets/QDialogButtonBox>
+#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QPushButton>
 
 #endif // Q_OS_WIN
 

@@ -22,7 +22,7 @@
 #ifndef FILTER_EXPRESSIONS_PREFERENCES_FRAME_H
 #define FILTER_EXPRESSIONS_PREFERENCES_FRAME_H
 
-#include <QFrame>
+#include <QtWidgets/QFrame>
 
 class QLineEdit;
 class QTreeWidgetItem;

@@ -26,8 +26,8 @@
 
 #include "epan/conversation.h"
 
-#include <QList>
-#include <QStyledItemDelegate>
+#include <QtCore/QList>
+#include <QtWidgets/QStyledItemDelegate>
 
 class RelatedPacketDelegate : public QStyledItemDelegate
 {

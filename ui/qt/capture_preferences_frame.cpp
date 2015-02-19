@@ -31,7 +31,7 @@
 #include "ui_capture_preferences_frame.h"
 #include "wireshark_application.h"
 
-#include <QSpacerItem>
+#include <QtWidgets/QSpacerItem>
 
 #include "ui/capture_ui_utils.h"
 #include "ui/ui_util.h"

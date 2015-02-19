@@ -30,8 +30,8 @@
 
 #include "wireshark_application.h"
 
-#include <QClipboard>
-#include <QPushButton>
+#include <QtGui/QClipboard>
+#include <QtWidgets/QPushButton>
 
 CompiledFilterOutput::CompiledFilterOutput(QWidget *parent, QStringList &intList, QString &compile_filter) :
     QDialog(parent),

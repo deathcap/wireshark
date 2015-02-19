@@ -23,10 +23,10 @@
 #define COMPILEDFILTEROUTPUT_H
 
 #include "config.h"
-#include <QDialog>
-#include <QList>
-#include <QHash>
-#include <QListWidgetItem>
+#include <QtWidgets/QDialog>
+#include <QtCore/QList>
+#include <QtCore/QHash>
+#include <QtWidgets/QListWidgetItem>
 
 #include <glib.h>
 

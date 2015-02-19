@@ -33,11 +33,11 @@
 
 #include "wireshark_application.h"
 
-#include <QClipboard>
-#include <QMessageBox>
-#include <QTreeWidget>
-#include <QTreeWidgetItemIterator>
-#include <QFileDialog>
+#include <QtGui/QClipboard>
+#include <QtWidgets/QMessageBox>
+#include <QtWidgets/QTreeWidget>
+#include <QtWidgets/QTreeWidgetItemIterator>
+#include <QtWidgets/QFileDialog>
 
 // The GTK+ counterpart uses tap_param_dlg, which we don't use. If we
 // need tap parameters we should probably create a TapParameterDialog

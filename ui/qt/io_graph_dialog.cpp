@@ -37,20 +37,20 @@
 #include "syntax_line_edit.h"
 #include "wireshark_application.h"
 
-#include <QClipboard>
-#include <QComboBox>
-#include <QFileDialog>
-#include <QFontMetrics>
-#include <QFrame>
-#include <QHBoxLayout>
-#include <QLineEdit>
-#include <QMessageBox>
-#include <QPushButton>
-#include <QRubberBand>
-#include <QSpacerItem>
-#include <QTimer>
-#include <QTreeWidget>
-#include <QVariant>
+#include <QtGui/QClipboard>
+#include <QtWidgets/QComboBox>
+#include <QtWidgets/QFileDialog>
+#include <QtGui/QFontMetrics>
+#include <QtWidgets/QFrame>
+#include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QLineEdit>
+#include <QtWidgets/QMessageBox>
+#include <QtWidgets/QPushButton>
+#include <QtWidgets/QRubberBand>
+#include <QtWidgets/QSpacerItem>
+#include <QtCore/QTimer>
+#include <QtWidgets/QTreeWidget>
+#include <QtCore/QVariant>
 
 // Bugs and uncertainties:
 // - Regular (non-stacked) bar graphs are drawn on top of each other on the Z axis.

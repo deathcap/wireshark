@@ -29,7 +29,7 @@
 #include "epan/packet-range.h"
 
 #include "syntax_line_edit.h"
-#include <QGroupBox>
+#include <QtWidgets/QGroupBox>
 
 namespace Ui {
 class PacketRangeGroupBox;

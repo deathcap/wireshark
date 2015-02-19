@@ -31,7 +31,7 @@
 
 #include "epan/tap.h"
 
-#include <QMenu>
+#include <QtWidgets/QMenu>
 
 class QAbstractButton;
 class QPushButton;

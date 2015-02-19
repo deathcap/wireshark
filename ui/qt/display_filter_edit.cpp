@@ -28,8 +28,8 @@
 #include "display_filter_edit.h"
 #include "syntax_line_edit.h"
 
-#include <QPainter>
-#include <QStyleOptionFrame>
+#include <QtGui/QPainter>
+#include <QtWidgets/QStyleOptionFrame>
 
 #include "ui/utf8_entities.h"
 

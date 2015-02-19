@@ -35,7 +35,7 @@
 #include "qcustomplot.h"
 #include "wireshark_dialog.h"
 
-#include <QMenu>
+#include <QtWidgets/QMenu>
 
 namespace Ui {
 class SequenceDialog;

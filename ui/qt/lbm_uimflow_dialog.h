@@ -36,8 +36,8 @@
 
 #include "sequence_diagram.h"
 
-#include <QDialog>
-#include <QMenu>
+#include <QtWidgets/QDialog>
+#include <QtWidgets/QMenu>
 
 namespace Ui
 {

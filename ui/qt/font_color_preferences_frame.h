@@ -24,8 +24,8 @@
 
 #include "preferences_dialog.h"
 
-#include <QFrame>
-#include <QFont>
+#include <QtWidgets/QFrame>
+#include <QtGui/QFont>
 
 namespace Ui {
 class FontColorPreferencesFrame;

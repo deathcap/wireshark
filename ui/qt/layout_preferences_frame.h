@@ -24,8 +24,8 @@
 
 #include "preferences_dialog.h"
 
-#include <QFrame>
-#include <QAbstractButton>
+#include <QtWidgets/QFrame>
+#include <QtWidgets/QAbstractButton>
 
 namespace Ui {
 class LayoutPreferencesFrame;

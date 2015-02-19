@@ -30,7 +30,7 @@
 #include "capture_filter_combo.h"
 #include "wireshark_application.h"
 
-#include <QCompleter>
+#include <QtWidgets/QCompleter>
 
 CaptureFilterCombo::CaptureFilterCombo(QWidget *parent) :
     QComboBox(parent),

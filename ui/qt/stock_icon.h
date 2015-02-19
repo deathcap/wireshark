@@ -22,7 +22,7 @@
 #ifndef STOCK_ICON_H
 #define STOCK_ICON_H
 
-#include <QIcon>
+#include <QtGui/QIcon>
 
 /** @file
  *  Goal: Beautiful icons appropriate for each of our supported platforms.

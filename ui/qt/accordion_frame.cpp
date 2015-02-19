@@ -26,8 +26,8 @@
 
 #include "ui/util.h"
 
-#include <QLayout>
-#include <QPropertyAnimation>
+#include <QtWidgets/QLayout>
+#include <QtCore/QPropertyAnimation>
 
 const int duration_ = 150;
 

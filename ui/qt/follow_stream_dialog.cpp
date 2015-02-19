@@ -51,12 +51,12 @@
 
 #include "qt_ui_utils.h"
 
-#include <QKeyEvent>
-#include <QMessageBox>
-#include <QPrintDialog>
-#include <QPrinter>
-#include <QTextEdit>
-#include <QTextStream>
+#include <QtGui/QKeyEvent>
+#include <QtWidgets/QMessageBox>
+#include <QtPrintSupport/QPrintDialog>
+#include <QtPrintSupport/QPrinter>
+#include <QtWidgets/QTextEdit>
+#include <QtCore/QTextStream>
 
 // To do:
 // - Instead of calling QMessageBox, display the error message in the text

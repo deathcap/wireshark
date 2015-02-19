@@ -32,9 +32,9 @@
 #include "frame_tvbuff.h"
 
 #include "wireshark_application.h"
-#include <QColor>
-#include <QFontMetrics>
-#include <QModelIndex>
+#include <QtGui/QColor>
+#include <QtGui/QFontMetrics>
+#include <QtCore/QModelIndex>
 
 PacketListModel::PacketListModel(QObject *parent, capture_file *cf) :
     QAbstractItemModel(parent)

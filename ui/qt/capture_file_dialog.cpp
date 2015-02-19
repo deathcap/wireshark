@@ -39,18 +39,18 @@
 
 #include <wireshark_application.h>
 
-#include <QGridLayout>
-#include <QHBoxLayout>
-#include <QVBoxLayout>
-#include <QLabel>
-#include <QLineEdit>
-#include <QCheckBox>
-#include <QFileInfo>
-#include <QMessageBox>
-#include <QSpacerItem>
+#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QVBoxLayout>
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
+#include <QtWidgets/QCheckBox>
+#include <QtCore/QFileInfo>
+#include <QtWidgets/QMessageBox>
+#include <QtWidgets/QSpacerItem>
 #endif // Q_OS_WIN
 
-#include <QPushButton>
+#include <QtWidgets/QPushButton>
 
 #ifdef Q_OS_WIN
 // All of these routines are required by file_dlg_win32.c.
