@@ -72,7 +72,7 @@ PKG_CONFIG_VERSION=0.28
 #
 # If you don't want to build with GTK+ at all, comment out both lines.
 # 
-QT_VERSION=5.2.1
+QT_VERSION=5.3.2
 GTK_VERSION=2.24.17
 #GTK_VERSION=3.5.2
 if [ "$GTK_VERSION" ]; then
@@ -180,7 +180,7 @@ uninstall_xz() {
 install_autoconf() {
     if [ "$AUTOCONF_VERSION" -a ! -f autoconf-$AUTOCONF_VERSION-done ] ; then
         echo "Downloading, building and installing GNU autoconf..."
-        [ -f autoconf-$AUTOCONF_VERSION.tar.xz ] || curl -O ftp://ftp.gnu.org/gnu/autoconf/autoconf-$AUTOCONF_VERSION.tar.xz || exit 1
+        [ -f autoconf-$AUTOCONF_VERSION.tar.xz ] || curl -O http://mirror.sdunix.com/gnu/autoconf/autoconf-$AUTOCONF_VERSION.tar.xz || exit 1
         xzcat autoconf-$AUTOCONF_VERSION.tar.xz | tar xf - || exit 1
         cd autoconf-$AUTOCONF_VERSION
         ./configure || exit 1
@@ -221,7 +221,7 @@ uninstall_autoconf() {
 install_automake() {
     if [ "$AUTOMAKE_VERSION" -a ! -f automake-$AUTOMAKE_VERSION-done ] ; then
         echo "Downloading, building and installing GNU automake..."
-        [ -f automake-$AUTOMAKE_VERSION.tar.xz ] || curl -O ftp://ftp.gnu.org/gnu/automake/automake-$AUTOMAKE_VERSION.tar.xz || exit 1
+        [ -f automake-$AUTOMAKE_VERSION.tar.xz ] || curl -O http://mirror.sdunix.com/gnu/automake/automake-$AUTOMAKE_VERSION.tar.xz || exit 1
         xzcat automake-$AUTOMAKE_VERSION.tar.xz | tar xf - || exit 1
         cd automake-$AUTOMAKE_VERSION
         ./configure || exit 1
@@ -261,7 +261,7 @@ uninstall_automake() {
 install_libtool() {
     if [ "$LIBTOOL_VERSION" -a ! -f libtool-$LIBTOOL_VERSION-done ] ; then
         echo "Downloading, building and installing GNU libtool..."
-        [ -f libtool-$LIBTOOL_VERSION.tar.xz ] || curl -O ftp://ftp.gnu.org/gnu/libtool/libtool-$LIBTOOL_VERSION.tar.xz || exit 1
+        [ -f libtool-$LIBTOOL_VERSION.tar.xz ] || curl -O http://mirror.sdunix.com/gnu/libtool/libtool-$LIBTOOL_VERSION.tar.xz || exit 1
         xzcat libtool-$LIBTOOL_VERSION.tar.xz | tar xf - || exit 1
         cd libtool-$LIBTOOL_VERSION
         ./configure || exit 1
@@ -307,7 +307,7 @@ install_cmake() {
         #
         [ -f cmake-$CMAKE_VERSION-Darwin64-universal.dmg ] || curl -O http://www.cmake.org/files/v$cmake_dir/cmake-$CMAKE_VERSION-Darwin64-universal.dmg || exit 1
         sudo hdiutil attach http://www.cmake.org/files/v2.8/cmake-$CMAKE_VERSION-Darwin64-universal.dmg || exit 1
-        sudo installer -target / -pkg /Volumes/cmake-$CMAKE_VERSION-Darwin64-universal/cmake-$CMAKE_VERSION-Darwin64-universal.pkg || exit 1
+        sudo installer -verbose -target / -pkg /Volumes/cmake-$CMAKE_VERSION-Darwin64-universal/cmake-$CMAKE_VERSION-Darwin64-universal.pkg || exit 1
         sudo hdiutil detach /Volumes/cmake-$CMAKE_VERSION-Darwin64-universal
         touch cmake-$CMAKE_VERSION-done
     fi
@@ -1002,7 +1002,7 @@ uninstall_libsmi() {
 install_libgpg_error() {
     if [ "$LIBGPG_ERROR_VERSION" -a ! -f libgpg-error-$LIBGPG_ERROR_VERSION-done ] ; then
         echo "Downloading, building, and installing libgpg-error:"
-        [ -f libgpg-error-$LIBGPG_ERROR_VERSION.tar.bz2 ] || curl -L -O ftp://ftp.gnupg.org/gcrypt/libgpg-error/libgpg-error-$LIBGPG_ERROR_VERSION.tar.bz2 || exit 1
+        [ -f libgpg-error-$LIBGPG_ERROR_VERSION.tar.bz2 ] || curl -L -O http://www.mirrorservice.org/sites/ftp.gnupg.org/gcrypt/libgpg-error/libgpg-error-$LIBGPG_ERROR_VERSION.tar.bz2 || exit 1
         bzcat libgpg-error-$LIBGPG_ERROR_VERSION.tar.bz2 | tar xf - || exit 1
         cd libgpg-error-$LIBGPG_ERROR_VERSION
         CFLAGS="$CFLAGS $VERSION_MIN_FLAGS $SDKFLAGS" CXXFLAGS="$CXXFLAGS $VERSION_MIN_FLAGS $SDKFLAGS" LDFLAGS="$LDFLAGS $VERSION_MIN_FLAGS $SDKFLAGS" ./configure || exit 1
@@ -1051,7 +1051,7 @@ install_libgcrypt() {
         fi
 
         echo "Downloading, building, and installing libgcrypt:"
-        [ -f libgcrypt-$LIBGCRYPT_VERSION.tar.gz ] || curl -L -O ftp://ftp.gnupg.org/gcrypt/libgcrypt/libgcrypt-$LIBGCRYPT_VERSION.tar.gz || exit 1
+        [ -f libgcrypt-$LIBGCRYPT_VERSION.tar.gz ] || curl -L -O http://www.mirrorservice.org/sites/ftp.gnupg.org/gcrypt/libgcrypt/libgcrypt-$LIBGCRYPT_VERSION.tar.gz || exit 1
         gzcat libgcrypt-$LIBGCRYPT_VERSION.tar.gz | tar xf - || exit 1
         cd libgcrypt-$LIBGCRYPT_VERSION
         #
@@ -2016,7 +2016,8 @@ then
                 # Yes, use it.
                 #
                 sdkpath="$sdksdir/$sdk"
-                qt_sdk_arg="-sdk $sdk"
+                qt_sdk=`(echo "$sdk" | sed -n 's/MacOSX/macosx/p' | sed -n 's/\.sdk$//p')`
+                qt_sdk_arg="-sdk $qt_sdk"
                 break 2
             fi
         done
@@ -2210,7 +2211,8 @@ if [ "$GTK_VERSION" ]; then
     fi
 fi
 
-export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/X11/lib/pkgconfig
+export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/X11/lib/pkgconfig:/usr/local/Qt-$QT_VERSION/lib/pkgconfig
+
 
 #
 # Do all the downloads and untarring in a subdirectory, so all that
