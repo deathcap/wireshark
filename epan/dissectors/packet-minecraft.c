@@ -309,11 +309,11 @@ void proto_reg_handoff_minecraft(void)
     /* register with wireshark to dissect udp packets on port 3001 */
     if (!Initialized) {
         minecraft_handle = create_dissector_handle(dissect_minecraft, proto_minecraft);
-        dissector_add("tcp.port", 25565, minecraft_handle);
+        dissector_add_uint("tcp.port", 25565, minecraft_handle);
     }
 }
 
-static void add_login_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo, guint32 offset)
+static void add_login_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo __attribute__((unused)), guint32 offset)
 {
     guint16 strlen1, strlen2;
 
@@ -323,32 +323,32 @@ static void add_login_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pin
     strlen2 = tvb_get_ntohs( tvb, offset + 5 + strlen1 + 2 );
     proto_tree_add_item(tree, hf_mc_motd, tvb, offset + 5 + strlen1 + 2, strlen2, FALSE);
 }
-static void add_handshake_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo, guint32 offset)
+static void add_handshake_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo __attribute__((unused)), guint32 offset)
 {
     guint16 strlen1;
 
     strlen1 = tvb_get_ntohs( tvb, offset + 1 );
     proto_tree_add_item(tree, hf_mc_serverid, tvb, offset + 3, strlen1, FALSE);
 }
-static void add_chat_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo, guint32 offset)
+static void add_chat_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo __attribute__((unused)), guint32 offset)
 {
     guint16 strlen1;
 
     strlen1 = tvb_get_ntohs( tvb, offset + 1 );
     proto_tree_add_item(tree, hf_mc_chat, tvb, offset + 3, strlen1, FALSE);
 }
-static void add_time_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo, guint32 offset)
+static void add_time_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo __attribute__((unused)), guint32 offset)
 {
     guint64 time;
 
     time = tvb_get_ntoh64(tvb, offset + 1 );
     proto_tree_add_item(tree, hf_mc_time, tvb, offset + 1, 8, FALSE);
 }
-static void add_loaded_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo, guint32 offset)
+static void add_loaded_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo __attribute__((unused)), guint32 offset)
 {
     proto_tree_add_item(tree, hf_mc_loaded, tvb, offset + 1, 1, FALSE);
 }
-static void add_player_position_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo, guint32 offset)
+static void add_player_position_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo __attribute__((unused)), guint32 offset)
 {
 
     /*
@@ -364,14 +364,14 @@ static void add_player_position_details( proto_tree *tree, tvbuff_t *tvb, packet
     proto_tree_add_item(tree, hf_mc_z, tvb, offset + 25, 8, FALSE);
 
 }
-static void add_player_look_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo, guint32 offset)
+static void add_player_look_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo  __attribute__((unused)), guint32 offset)
 {
 
     proto_tree_add_item(tree, hf_mc_rotation, tvb, offset + 1, 4, FALSE);
     proto_tree_add_item(tree, hf_mc_pitch, tvb, offset + 5, 4, FALSE);
 
 }
-static void add_player_move_look_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo, guint32 offset)
+static void add_player_move_look_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo  __attribute__((unused)), guint32 offset)
 {
     proto_tree_add_item(tree, hf_mc_x, tvb, offset + 1, 8, FALSE);
     proto_tree_add_item(tree, hf_mc_y, tvb, offset + 9, 8, FALSE);
@@ -382,7 +382,7 @@ static void add_player_move_look_details( proto_tree *tree, tvbuff_t *tvb, packe
     proto_tree_add_item(tree, hf_mc_pitch, tvb, offset + 37, 4, FALSE);
 
 }
-static void add_block_dig_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo, guint32 offset)
+static void add_block_dig_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo  __attribute__((unused)), guint32 offset)
 {
     proto_tree_add_item(tree, hf_mc_status, tvb, offset + 1, 1, FALSE);
     proto_tree_add_item(tree, hf_mc_xint, tvb, offset + 2, 4, FALSE);
@@ -391,7 +391,7 @@ static void add_block_dig_details( proto_tree *tree, tvbuff_t *tvb, packet_info 
     proto_tree_add_item(tree, hf_mc_direction, tvb, offset + 11, 1, FALSE);
 
 }
-static void add_place_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo, guint32 offset)
+static void add_place_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo  __attribute__((unused)), guint32 offset)
 {
     proto_tree_add_item(tree, hf_mc_block_type, tvb, offset + 1, 2, FALSE);
     proto_tree_add_item(tree, hf_mc_xint, tvb, offset + 3, 4, FALSE);
@@ -400,23 +400,23 @@ static void add_place_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pin
     proto_tree_add_item(tree, hf_mc_direction, tvb, offset + 12, 1, FALSE);
 
 }
-static void add_block_item_switch_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo, guint32 offset)
+static void add_block_item_switch_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo  __attribute__((unused)), guint32 offset)
 {
     proto_tree_add_item(tree, hf_mc_unique_id, tvb, offset + 1, 4, FALSE);
     proto_tree_add_item(tree, hf_mc_item_code, tvb, offset + 5, 2, FALSE);
 }
-static void add_add_to_inventory_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo, guint32 offset)
+static void add_add_to_inventory_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo  __attribute__((unused)), guint32 offset)
 {
     proto_tree_add_item(tree, hf_mc_block_type, tvb, offset + 1, 2, FALSE);
     proto_tree_add_item(tree, hf_mc_amount, tvb, offset + 3, 1, FALSE);
     proto_tree_add_item(tree, hf_mc_life, tvb, offset + 4, 2, FALSE);
 }
-static void add_arm_animation_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo, guint32 offset)
+static void add_arm_animation_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo  __attribute__((unused)), guint32 offset)
 {
     proto_tree_add_item(tree, hf_mc_unique_id, tvb, offset + 1, 4, FALSE);
     proto_tree_add_item(tree, hf_mc_unknown_byte, tvb, offset + 5, 1, FALSE);
 }
-static void add_named_entity_spawn_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo, guint32 offset)
+static void add_named_entity_spawn_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo  __attribute__((unused)), guint32 offset)
 {
     int name_len, o2;
     proto_tree_add_item(tree, hf_mc_unique_id, tvb, offset + 1, 4, FALSE);
@@ -434,7 +434,7 @@ static void add_named_entity_spawn_details( proto_tree *tree, tvbuff_t *tvb, pac
 
 
 }
-static void add_pickup_spawn_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo, guint32 offset)
+static void add_pickup_spawn_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo  __attribute__((unused)), guint32 offset)
 {
 
     proto_tree_add_item(tree, hf_mc_unique_id, tvb, offset + 1, 4, FALSE);
@@ -448,13 +448,13 @@ static void add_pickup_spawn_details( proto_tree *tree, tvbuff_t *tvb, packet_in
     proto_tree_add_item(tree, hf_mc_pitch_byte, tvb, offset + 21, 1, FALSE);
     proto_tree_add_item(tree, hf_mc_unknown_byte, tvb, offset + 22, 1, FALSE);
 }
-static void add_pre_chunk_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo, guint32 offset)
+static void add_pre_chunk_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo  __attribute__((unused)), guint32 offset)
 {
     proto_tree_add_item(tree, hf_mc_xint, tvb, offset + 1, 4, FALSE);
     proto_tree_add_item(tree, hf_mc_zint, tvb, offset + 5, 4, FALSE);
     proto_tree_add_item(tree, hf_mc_ybyte, tvb, offset + 9, 1, FALSE);
 }
-static void add_map_chunk_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo, guint32 offset)
+static void add_map_chunk_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo  __attribute__((unused)), guint32 offset)
 {
     proto_tree_add_item(tree, hf_mc_xint, tvb, offset + 1, 4, FALSE);
     proto_tree_add_item(tree, hf_mc_yshort, tvb, offset + 5, 2, FALSE);
@@ -465,7 +465,7 @@ static void add_map_chunk_details( proto_tree *tree, tvbuff_t *tvb, packet_info 
     proto_tree_add_item(tree, hf_mc_size_z, tvb, offset + 13, 1, FALSE);
 
 }
-static void add_block_change_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo, guint32 offset)
+static void add_block_change_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo  __attribute__((unused)), guint32 offset)
 {
     proto_tree_add_item(tree, hf_mc_xint, tvb, offset + 1, 4, FALSE);
     proto_tree_add_item(tree, hf_mc_ybyte, tvb, offset + 5, 1, FALSE);
@@ -475,28 +475,28 @@ static void add_block_change_details( proto_tree *tree, tvbuff_t *tvb, packet_in
     proto_tree_add_item(tree, hf_mc_block_meta_byte, tvb, offset + 11, 1, FALSE);
 
 }
-static void add_spawn_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo, guint32 offset)
+static void add_spawn_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo  __attribute__((unused)), guint32 offset)
 {
     proto_tree_add_item(tree, hf_mc_xint, tvb, offset + 1, 4, FALSE);
     proto_tree_add_item(tree, hf_mc_yint, tvb, offset + 5, 4, FALSE);
     proto_tree_add_item(tree, hf_mc_zint, tvb, offset + 9, 4, FALSE);
 }
 
-static void add_complex_entity_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo, guint32 offset)
+static void add_complex_entity_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo  __attribute__((unused)), guint32 offset)
 {
     proto_tree_add_item(tree, hf_mc_xint, tvb, offset + 1, 4, FALSE);
     proto_tree_add_item(tree, hf_mc_yshort, tvb, offset + 5, 2, FALSE);
     proto_tree_add_item(tree, hf_mc_zint, tvb, offset + 7, 4, FALSE);
 
 }
-static void add_collect_item_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo, guint32 offset)
+static void add_collect_item_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo  __attribute__((unused)), guint32 offset)
 {
     proto_tree_add_item(tree, hf_mc_unique_id, tvb, offset + 1, 4, FALSE);
     proto_tree_add_item(tree, hf_mc_xbyte, tvb, offset + 5, 1, FALSE);
     proto_tree_add_item(tree, hf_mc_ybyte, tvb, offset + 6, 1, FALSE);
     proto_tree_add_item(tree, hf_mc_zbyte, tvb, offset + 7, 1, FALSE);
 }
-static void add_object_vehicle_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo, guint32 offset)
+static void add_object_vehicle_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo  __attribute__((unused)), guint32 offset)
 {
     proto_tree_add_item(tree, hf_mc_unique_id, tvb, offset + 1, 4, FALSE);
     proto_tree_add_item(tree, hf_mc_type, tvb, offset + 5, 1, FALSE);
@@ -505,11 +505,11 @@ static void add_object_vehicle_details( proto_tree *tree, tvbuff_t *tvb, packet_
     proto_tree_add_item(tree, hf_mc_yint, tvb, offset + 10, 4, FALSE);
     proto_tree_add_item(tree, hf_mc_zint, tvb, offset + 14, 4, FALSE);
 }
-static void add_destroy_entity_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo, guint32 offset)
+static void add_destroy_entity_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo  __attribute__((unused)), guint32 offset)
 {
     proto_tree_add_item(tree, hf_mc_unique_id, tvb, offset + 1, 4, FALSE);
 }
-static void add_relative_entity_move_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo, guint32 offset)
+static void add_relative_entity_move_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo  __attribute__((unused)), guint32 offset)
 {
     proto_tree_add_item(tree, hf_mc_unique_id, tvb, offset + 1, 4, FALSE);
 
@@ -518,7 +518,7 @@ static void add_relative_entity_move_details( proto_tree *tree, tvbuff_t *tvb, p
     proto_tree_add_item(tree, hf_mc_zbyte, tvb, offset + 7, 1, FALSE);
 
 }
-static void add_entity_look_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo, guint32 offset)
+static void add_entity_look_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo  __attribute__((unused)), guint32 offset)
 {
     proto_tree_add_item(tree, hf_mc_unique_id, tvb, offset + 1, 4, FALSE);
 
@@ -526,7 +526,7 @@ static void add_entity_look_details( proto_tree *tree, tvbuff_t *tvb, packet_inf
     proto_tree_add_item(tree, hf_mc_pitch_byte, tvb, offset + 6, 1, FALSE);
 
 }
-static void add_relative_entity_move_look_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo, guint32 offset)
+static void add_relative_entity_move_look_details( proto_tree *tree, tvbuff_t *tvb, packet_info *pinfo  __attribute__((unused)), guint32 offset)
 {
     proto_tree_add_item(tree, hf_mc_unique_id, tvb, offset + 1, 4, FALSE);
 
@@ -540,18 +540,21 @@ static void add_relative_entity_move_look_details( proto_tree *tree, tvbuff_t *t
 
 static void dissect_minecraft_message(tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree, guint8 type,  guint32 offset, guint32 length)
 {
+    /* TODO: modern replacement for check_col?
     if (check_col(pinfo->cinfo, COL_PROTOCOL))
-        col_set_str(pinfo->cinfo, COL_PROTOCOL, PROTO_TAG_MC);
+        col_set_str(pinfo->cinfo, COL_PROTOCOL, PROTO_TAG_MC); */
     /* Clear out stuff in the info column */
 //    if(check_col(pinfo->cinfo,COL_INFO)){
 //        col_clear(pinfo->cinfo,COL_INFO);
 //    }
 
+    /* TODO: modern replacement for check_col?
     if (check_col(pinfo->cinfo, COL_INFO)) {
-        col_add_fstr(pinfo->cinfo, COL_INFO, pinfo->match_port == pinfo->destport ? "C->S" : "S->C" ": %d > %d Info Type:[%s]",
+        col_add_fstr(pinfo->cinfo, COL_INFO, pinfo->match_uint == pinfo->destport ? "C->S" : "S->C" ": %d > %d Info Type:[%s]",
                      pinfo->srcport, pinfo->destport,
                      val_to_str(type, packettypenames, "Unknown Type:0x%02x"));
-    }
+    }*/
+
     if ( tree ) {
         mc_item = proto_tree_add_item(tree, proto_minecraft, tvb, offset, length, FALSE);
         mc_tree = proto_item_add_subtree(mc_item, ett_mc);
@@ -650,7 +653,7 @@ guint get_minecraft_packet_len(guint8 type,guint offset, guint available, tvbuff
         break;
     case 0x01:
     {
-        int len_strA, len_strB;
+        guint len_strA, len_strB;
         if ( available >= 7 ) {
             len_strA = tvb_get_ntohs(tvb, offset + 5);
             if ( available >= 9 + len_strA ) {
@@ -798,7 +801,7 @@ guint get_minecraft_packet_len(guint8 type,guint offset, guint available, tvbuff
         }
         break;
     default:
-        printf("Unknown packet: 0x%x\n", type);
+        //TODO printf("Unknown packet: 0x%x\n", type);
         len = -1;
     }
     return len;
