@@ -142,6 +142,7 @@ ASN1_DISSECTOR_SRC = \
 	packet-lppe.c	\
 	packet-lte-rrc.c	\
 	packet-mcpe.c	\
+	packet-minecraft.c	\
 	packet-mms.c	\
 	packet-mpeg-audio.c	\
 	packet-mpeg-pes.c	\
