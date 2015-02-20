@@ -888,11 +888,11 @@ void dissect_minecraft(tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree)
         // packet_len includes type field; make it only contain data payload length
         packet_len -= packet_type_len;
 
-        proto_tree_add_item(mc_tree, hf_mc_type, tvb, offset, packet_type_len, FALSE);
+        if (tree) proto_tree_add_item(mc_tree, hf_mc_type, tvb, offset, packet_type_len, FALSE);
 
         offset += packet_type_len;
 
-        proto_tree_add_item(mc_tree, hf_mc_data, tvb, offset, packet_len, FALSE);
+        if (tree) proto_tree_add_item(mc_tree, hf_mc_data, tvb, offset, packet_len, FALSE);
 
         //dissect_minecraft_message(tvb, pinfo, tree, packet, offset, len);
         (void)dissect_minecraft_message;
