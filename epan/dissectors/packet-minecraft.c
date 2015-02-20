@@ -50,6 +50,7 @@ proto_item *mc_sub_item = NULL;
 proto_tree *mc_tree = NULL;
 proto_tree *mc_header_tree = NULL;
 
+/*
 static const value_string packettypenames[] = {
     { 0x00, "Keep Alive" },
     { 0x01, "Login" },
@@ -89,7 +90,7 @@ static const value_string packettypenames[] = {
     { 0xFF, "Kick" },
     { 0, NULL }
 };
-
+*/
 static const value_string directionnames[] = {
     {0, "-Y"},
     {1, "+Y"},
@@ -122,6 +123,7 @@ static int *ett[] = {
 };
 static gint hf_mc_data = -1;
 static gint hf_mc_type = -1;
+static gint hf_mc_length = -1;
 static gint hf_mc_server_name = -1;
 static gint hf_mc_motd = -1;
 static gint hf_mc_username = -1;
@@ -172,8 +174,13 @@ void proto_register_minecraft(void)
                 {"Data", "mc.data", FT_NONE, BASE_NONE, NULL, 0x0, "Packet Data", HFILL}
             },
             { &hf_mc_type,
-              { "Type", "mc.type", FT_UINT8, BASE_DEC, VALS(packettypenames), 0x0, "Packet Type", HFILL }
+              { "Type", "mc.type", FT_UINT8, BASE_DEC, /* TODO VALS(packettypenames) */ NULL, 0x0, "Packet Type", HFILL } // TODO: FT_? for varint?
             },
+            { &hf_mc_length,
+              { "Length", "mc.length", FT_UINT8, BASE_DEC, NULL, 0x0, "Packet Length", HFILL }
+            },
+
+
             { &hf_mc_server_name,
               {"Server Name", "mc.server_name", FT_STRING, BASE_NONE, NULL, 0x0, "Text", HFILL}
             },
@@ -291,7 +298,7 @@ void proto_register_minecraft(void)
 
         };
         proto_minecraft = proto_register_protocol (
-                              "Minecraft Alpha SMP Protocol", /* name */
+                              "Minecraft Protocol", /* name */
                               "Minecraft",          /* short name */
                               "mc"	         /* abbrev */
                           );
@@ -813,7 +820,8 @@ guint __attribute__((unused)) alpha_get_minecraft_packet_len(guint8 type,guint o
 
 
 // based on node-minecraft-protocol
-bool readVarInt(tvbuff_t *tvb, guint offset, guint available, guint *value, size_t *consumed)
+
+bool readVarInt(tvbuff_t *tvb, guint offset, guint available, guint *value, gint *consumed)
 {
     guint result = 0; // TODO: check overflow
     uint64_t shift = 0;
@@ -839,37 +847,57 @@ bool readVarInt(tvbuff_t *tvb, guint offset, guint available, guint *value, size
     return false;
 }
 
-gint get_minecraft_packet_len(guint offset, guint available, tvbuff_t *tvb) {
-    guint len=-1;
-
-    size_t consumed = 0;
-    if (!readVarInt(tvb, offset, available, &len, &consumed))
-        return -1;
-
-    return len;
-}
-
-#define FRAME_HEADER_LEN 17
+#include <stdio.h>
 void dissect_minecraft(tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree)
 {
-    guint8 packet;
     guint offset=0;
 
     while (offset < tvb_reported_length(tvb)) {
-        packet = tvb_get_guint8(tvb, offset);
         gint available = tvb_reported_length_remaining(tvb, offset);
-        gint len = get_minecraft_packet_len(offset, available, tvb);
-        if (len == 0 || len == -1 || len > available) {
+
+        gint packet_len = 0;
+        gint packet_len_len = 0;
+
+        readVarInt(tvb, offset, available, &packet_len, &packet_len_len);
+        printf("packet_len = %d, packet_len_len = %d\n", packet_len, packet_len_len);
+
+        if (tree) {
+            mc_item = proto_tree_add_item(tree, proto_minecraft, tvb, offset, packet_len, FALSE);
+            mc_tree = proto_item_add_subtree(mc_item, ett_mc);
+
+            proto_tree_add_item(mc_tree, hf_mc_length, tvb, offset, packet_len_len, FALSE);
+        }
+
+        offset += packet_len_len;
+
+        if (packet_len == -1 || packet_len > available) {
             pinfo->desegment_offset = offset;
-            if ( len == -1 ) {
+            if ( packet_len == -1 ) {
                 pinfo->desegment_len = DESEGMENT_ONE_MORE_SEGMENT;
             } else {
-                pinfo->desegment_len = len - available;
+                pinfo->desegment_len = packet_len - available;
             }
             return;
         }
-        dissect_minecraft_message(tvb, pinfo, tree, packet, offset, len);
-        offset += len;
+
+        gint packet_type = 0;
+        gint packet_type_len = 0;
+        readVarInt(tvb, offset, available, &packet_type, &packet_type_len);
+        printf("packet_type = %d, packet_type_len = %d\n", packet_type, packet_type_len);
+
+        // packet_len includes type field; make it only contain data payload length
+        packet_len -= packet_type_len;
+
+        proto_tree_add_item(mc_tree, hf_mc_type, tvb, offset, packet_type_len, FALSE);
+
+        offset += packet_type_len;
+
+        proto_tree_add_item(mc_tree, hf_mc_data, tvb, offset, packet_len, FALSE);
+
+        //dissect_minecraft_message(tvb, pinfo, tree, packet, offset, len);
+        (void)dissect_minecraft_message;
+
+        offset += packet_len;
     }
 }
 
