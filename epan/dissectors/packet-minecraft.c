@@ -27,6 +27,8 @@ THE SOFTWARE.
 #include <epan/prefs.h>
 #include <epan/packet.h>
 #include <epan/dissectors/packet-tcp.h>
+#include <stdbool.h>
+#include <assert.h>
 
 /* forward reference */
 void proto_register_minecraft();
@@ -645,167 +647,41 @@ static void dissect_minecraft_message(tvbuff_t *tvb, packet_info *pinfo, proto_t
     }
 }
 
-guint get_minecraft_packet_len(guint8 type,guint offset, guint available, tvbuff_t *tvb) {
+// based on node-minecraft-protocol
+bool readVarInt(tvbuff_t *tvb, guint offset, guint available, guint *value, size_t *consumed)
+{
+    guint result = 0; // TODO: check overflow
+    uint64_t shift = 0;
+    guint cursor = offset;
+
+    while (true) {
+        if (cursor + 1 > available) return false;
+        guint8 b = tvb_get_guint8(tvb, cursor);
+        result |= ((b & 0x7f) << shift); // Add the bits to our number, except MSB
+        cursor++;
+        if (!(b & 0x80)) { // If the MSB is not set, we return the number
+            *value = result;
+            *consumed = cursor - offset;
+            return true;
+        }
+        shift += 7; // we only have 7 bits, MSB being the return-trigger
+        // Make sure our shift don't overflow.
+        if (shift >= 64) {
+            //"varint is too big"
+            return false;
+        }
+    }
+    return false;
+}
+
+gint get_minecraft_packet_len(guint offset, guint available, tvbuff_t *tvb) {
     guint len=-1;
-    switch (type) {
-    case 0x00:
-        len = 1;
-        break;
-    case 0x01:
-    {
-        guint len_strA, len_strB;
-        if ( available >= 7 ) {
-            len_strA = tvb_get_ntohs(tvb, offset + 5);
-            if ( available >= 9 + len_strA ) {
-                len_strB = tvb_get_ntohs(tvb, offset + 7 + len_strA);
-                len = 5 + (2 + len_strA) + (2 + len_strB) + 9;
-            }
-        }
-    }
-    break;
-    case 0x02:
-        if ( available >= 3 ) {
-            len = 3 + tvb_get_ntohs(tvb, offset + 1);
-        }
-        break;
-    case 0x03:
-        if ( available >= 3 ) {
-            len = 3 + tvb_get_ntohs(tvb, offset + 1);
-        }
-        break;
-    case 0x04:
-        len = 9;
-        break;
-    case 0x05:
-    {
-        if ( available >= 7 ) {
-            int num_inv, o, size, count;
-            gint16 val;
-            num_inv = tvb_get_ntohs(tvb, offset + 5);
-            o = offset + 7;
-            size = 0;
-            count = 0;
-            while ( o-offset < available && available -(o-offset) >= 2 && count != num_inv ) {
-                count++;
 
-                val = tvb_get_ntohs(tvb, o);
-                if ( val == -1 ) {
-                    size += 2;
-                    o += 2;
-                } else {
-                    size += 5;
-                    o += 5;
-                }
-            }
-            if ( count == num_inv ) {
-                len = 7 + size;
-            }
-        }
-    }
-    break;
-    case 0x06:
-        len = 13;
-        break;
-    case 0x0A:
-        len = 2;
-        break;
-    case 0x0B:
-        len = 34;
-        break;
-    case 0x07:
-        len = 9;
-        break;
-    case 0x0C:
-        len = 10;
-        break;
-    case 0x0D:
-        len = 42;
-        break;
-    case 0x0E:
-        len = 12;
-        break;
-    case 0x0F:
-        len = 13;
-        break;
-    case 0x10:
-        len = 7;
-        break;
-    case 0x11:
-        len = 6;
-        break;
-    case 0x12:
-        len = 6;
-        break;
-    case 0x15:
-        len = 23;
-        break;
-    case 0x16:
-        len = 9;
-        break;
-    case 0x17:
-        len = 18;
-        break;
-    case 0x18:
-        len = 20;
-        break;
-    case 0x1C:
-        len = 11;
-        break;
-    case 0x1D:
-        len = 5;
-        break;
-    case 0x1E:
-        len = 5;
-        break;
-    case 0x1F:
-        len = 8;
-        break;
-    case 0x20:
-        len = 7;
-        break;
-    case 0x21:
-        len = 10;
-        break;
-    case 0x22:
-        len = 19;
-        break;
-    case 0x27:
-        len = 9;
-        break;
-    case 0x32:
-        len = 10;
-        break;
-    case 0x33:
-        if ( available >= 18 ) {
-            len = 18 + tvb_get_ntohl(tvb, offset + 14);
-        }
-        break;
-    case 0x34:
-        if ( available >= 11 ) {
-            // the size we get here is number of elements in the arrays
-            // and there are 3 arrays, a short, and two bytes, so multiply by 4
-            len = 11 + (4 * tvb_get_ntohs(tvb, offset + 9));
-        }
-        break;
-    case 0x35:
-        len = 12;
-        break;
-    case 0x3b:
-        if ( available >= 13 ) {
-            len = 13 + tvb_get_ntohs(tvb, offset + 11);
-        }
-        break;
-    case 0xff:
-        if ( available >= 3 ) {
-            len = 3 + tvb_get_ntohs(tvb, offset + 1);
-        }
-        break;
-    default:
-        //TODO printf("Unknown packet: 0x%x\n", type);
-        len = -1;
-    }
+    size_t consumed = 0;
+    if (!readVarInt(tvb, offset, available, &len, &consumed))
+        return -1;
+
     return len;
-
 }
 
 #define FRAME_HEADER_LEN 17
@@ -817,8 +693,8 @@ void dissect_minecraft(tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree)
     while (offset < tvb_reported_length(tvb)) {
         packet = tvb_get_guint8(tvb, offset);
         gint available = tvb_reported_length_remaining(tvb, offset);
-        gint len = get_minecraft_packet_len(packet, offset, available, tvb);
-        if (len == -1 || len > available) {
+        gint len = get_minecraft_packet_len(offset, available, tvb);
+        if (len == 0 || len == -1 || len > available) {
             pinfo->desegment_offset = offset;
             if ( len == -1 ) {
                 pinfo->desegment_len = DESEGMENT_ONE_MORE_SEGMENT;
