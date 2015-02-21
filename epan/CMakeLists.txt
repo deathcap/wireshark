@@ -955,6 +955,7 @@ set(DISSECTOR_SRC
 	dissectors/packet-mbim.c
 	dissectors/packet-mbtcp.c
 	dissectors/packet-mcpe.c
+	dissectors/packet-minecraft.c
 	dissectors/packet-mdshdr.c
 	dissectors/packet-media.c
 	dissectors/packet-megaco.c
