@@ -925,6 +925,11 @@ static guint get_minecraft_message_len(packet_info *pinfo _U_, tvbuff_t *tvb, in
 /* The main dissecting routine */
 void dissect_minecraft(tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree)
 {
+    col_set_str(pinfo->cinfo, COL_PROTOCOL, "Minecraft");
+
+    /* Clear out stuff in the info column */
+    col_clear(pinfo->cinfo, COL_INFO);
+
     /* Reassembles split TCP packets
      * see https://www.wireshark.org/docs/wsdg_html_chunked/ChDissectReassemble.html
      */
