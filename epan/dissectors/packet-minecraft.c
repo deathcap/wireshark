@@ -547,7 +547,7 @@ static void add_relative_entity_move_look_details( proto_tree *tree, tvbuff_t *t
 
 }
 
-static void dissect_minecraft_message(tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree, guint8 type,  guint32 offset, guint32 length)
+static void alpha_dissect_minecraft_message(tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree, guint8 type,  guint32 offset, guint32 length)
 {
     /* TODO: modern replacement for check_col?
     if (check_col(pinfo->cinfo, COL_PROTOCOL))
@@ -848,7 +848,9 @@ bool readVarInt(tvbuff_t *tvb, guint offset, guint available, guint *value, gint
 }
 
 #include <stdio.h>
-void dissect_minecraft(tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree)
+
+/* This method dissects fully reassembled messages */
+static int dissect_minecraft_message(tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree, void *data _U_)
 {
     guint offset=0;
 
@@ -877,7 +879,7 @@ void dissect_minecraft(tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree)
             } else {
                 pinfo->desegment_len = packet_len - available;
             }
-            return;
+            return tvb_length(tvb); // TODO: ?
         }
 
         gint packet_type = 0;
@@ -894,10 +896,39 @@ void dissect_minecraft(tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree)
 
         if (tree) proto_tree_add_item(mc_tree, hf_mc_data, tvb, offset, packet_len, FALSE);
 
-        //dissect_minecraft_message(tvb, pinfo, tree, packet, offset, len);
-        (void)dissect_minecraft_message;
+        //alpha_dissect_minecraft_message(tvb, pinfo, tree, packet, offset, len);
+        (void)alpha_dissect_minecraft_message;
 
         offset += packet_len;
     }
+
+    return tvb_length(tvb);
 }
 
+/* determine PDU (Protocol Data Unit) length of protocol Minecraft */
+static guint get_minecraft_message_len(packet_info *pinfo _U_, tvbuff_t *tvb, int offset, void *data _U_)
+{
+    gint packet_len = 0;
+    gint packet_len_len = 0;
+
+    readVarInt(tvb, offset, tvb_length(tvb), &packet_len, &packet_len_len);
+
+    return (guint)packet_len;
+}
+
+/* Minimal number of bytes required to determine length of the PDU
+ * <varint length> <varint typeid> <data>
+ * varints are a minimum of one byte, so an empty packet is two bytes
+ */
+#define FRAME_HEADER_LEN 2
+
+/* The main dissecting routine */
+void dissect_minecraft(tvbuff_t *tvb, packet_info *pinfo, proto_tree *tree)
+{
+    /* Reassembles split TCP packets
+     * see https://www.wireshark.org/docs/wsdg_html_chunked/ChDissectReassemble.html
+     */
+
+    tcp_dissect_pdus(tvb, pinfo, tree, TRUE, FRAME_HEADER_LEN,
+            get_minecraft_message_len, dissect_minecraft_message, NULL);
+}
